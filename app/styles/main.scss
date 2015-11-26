@@ -1,31 +1,277 @@
 // bower:scss
 // endbower
 
-body {
-  background: #fafafa;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  color: #333;
-}
+// Settings & mixins
+// Set portrait orientation size only - landscape sizes dealt with automatically
+$banner-width-p: 320px;
+$banner-height-p: 480px;
 
-.hero-unit {
-  margin: 50px auto 0 auto;
-  width: 300px;
-  font-size: 18px;
-  font-weight: 200;
-  line-height: 30px;
-  background-color: #eee;
-  border-radius: 6px;
-  padding: 60px;
-  h1 {
-    font-size: 60px;
-    line-height: 1;
-    letter-spacing: -1px;
+$banner-width-l: $banner-height-p;
+$banner-height-l: $banner-width-p;
+
+// Banner sizing
+%sizing {
+  position: absolute;
+
+  @media (orientation: portrait) {
+    width: $banner-width-p;
+    height: $banner-height-p;
+  }
+
+  @media (orientation: landscape) {
+    width: $banner-width-l;
+    height: $banner-height-l;
   }
 }
 
-.browserupgrade {
-  margin: 0.2em 0;
-  background: #ccc;
-  color: #000;
-  padding: 0.2em 0;
+// Hide assets
+%zero-opacity {
+  opacity: 0;
+}
+
+// *
+
+body {
+  // Set some defaults
+  width: 100%;
+  height: 100%;
+  margin: auto;
+}
+
+// Preloader
+.preloader-box {
+  @extend %sizing;
+
+  z-index: 200;
+}
+
+.preloader{
+  position:absolute;
+  $preloader-width: 32px;
+  $preloader-height: 32px;
+
+  width: $preloader-width;
+  height: $preloader-height;
+  height:auto;
+  z-index: 201;
+
+
+  @media (orientation: portrait) {
+    top: ($banner-height-p / 2) - ($preloader-height / 2);
+    left: ($banner-width-p / 2) - ($preloader-width / 2);
+  }
+
+  @media (orientation: landscape) {
+    top: ($banner-height-l / 2) - ($preloader-height / 2);
+    left: ($banner-width-l / 2) - ($preloader-width / 2);
+  }
+}
+
+// Content box
+.content {
+  @extend %sizing;
+
+  overflow: hidden;
+  z-index: 100;
+
+  // If you can't click things this might be the reason why
+  pointer-events: none;
+
+  border: 1px solid #939598;
+  box-sizing: border-box;
+
+  @media (orientation: portrait) {
+    width: $banner-width-p;
+    height: $banner-height-p;
+  }
+
+  @media (orientation: landscape) {
+    width: $banner-width-l;
+    height: $banner-height-l;
+  }
+}
+
+.links {
+  @extend %sizing;
+}
+
+.exit-link {
+  @extend %sizing;
+  @extend %zero-opacity;
+
+  cursor: pointer;
+  z-index: 300;
+}
+
+.campaign-link {
+  @extend %sizing;
+  position: absolute;
+
+  z-index: 800;
+  opacity: 0.25;
+
+  box-sizing: border-box;
+  border-top: 1px solid black;
+}
+
+.terms-link {
+  position: absolute;
+  z-index: 900;
+
+  width: 60px;
+  height: 30px;
+
+  bottom: 0;
+  right: 0;
+}
+
+.legal-section {
+  position: absolute;
+  z-index: 900;
+
+  @media (orientation: portrait) {
+    width: $banner-width-p;
+  }
+
+  @media (orientation: landscape) {
+    width: $banner-width-l;
+  }
+
+  right: 0;
+  text-align: left;
+  background-color: white;
+
+  box-sizing: border-box;
+  border-top: 1px solid #bcbcbd;
+  padding: 1px 0 1px;
+
+  transition: all 0.4s;
+}
+
+.legal-copy {
+  display: inline-block;
+  font-family: sans-serif;
+  font-size: 10px;
+  color: #333;
+  text-decoration: none;
+  margin-left: 5px;
+}
+
+// Open and close legl section
+.legal-section-closed {
+  bottom: -30px
+}
+
+.legal-section-open {
+  bottom: 0px
+}
+
+
+#closeLegalSection {
+  position: absolute;
+  z-index: 900;
+
+  width: 60px;
+  height: 28px;
+
+  bottom: 0;
+  right: 0;
+
+  box-sizing: border-box;
+  border-left: 1px solid #bcbcbd;
+  text-align: center;
+}
+
+.close-legal-section-copy {
+  @extend .legal-copy;
+  line-height: 26px;
+}
+
+.portrait {
+  @media (orientation: portrait) {
+    display: block;
+  }
+
+  @media (orientation: landscape) {
+    display: none;
+  }
+}
+
+.landscape {
+  @media (orientation: portrait) {
+    display: none;
+  }
+
+  @media (orientation: landscape) {
+    display: block;
+  }
+}
+
+// *
+
+// IMAGE ASSETS
+// For absolute positioning the images
+.absolute {
+  position: absolute;
+}
+
+// Individual image styles
+.voda-logo {
+  z-index: 203;
+}
+
+.voda-logo-copy {
+  @extend %zero-opacity;
+  z-index: 202;
+}
+
+.rhombus {
+  z-index: 201;
+
+  display: block;
+  transform-origin: 1382px 700px;
+
+  @media (orientation: portrait) {
+    top: -645px;
+    left: -1257px;
+  }
+
+  @media (orientation: landscape) {
+    top: -653px;
+    left: -1260px;
+  }
+}
+
+
+
+.cta-button {
+  @extend %zero-opacity;
+  z-index: 201;
+}
+
+.gear {
+  z-index: 200;
+
+  @media (orientation: portrait) {
+    left: 320px;
+  }
+
+  @media (orientation: landscape) {
+    left: 480px;
+  }
+}
+
+.headphones {
+  z-index: 201;
+  top: 130px;
+}
+
+.main-title {
+  @extend %zero-opacity;
+  z-index: 201;
+}
+
+.terms {
+  @extend %zero-opacity;
+  z-index: 201;
 }

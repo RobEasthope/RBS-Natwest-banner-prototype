@@ -1,13 +1,8 @@
 <!doctype html>
-<html lang="">
+<html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>insolent waddle</title>
-
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <!-- Place favicon.ico in the root directory -->
+    <title>Arcadian Duck</title>
 
     <!-- build:css styles/vendor.css -->
     <!-- bower:css -->
@@ -17,39 +12,74 @@
     <!-- build:css styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
-    
-  </head>
-  <body>
-    <!--[if lt IE 10]>
-      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
-    
-    <div class="hero-unit">
-      <h1>'Allo, 'Allo!</h1>
-      <p>You now have</p>
-      <ul>
-        <li>HTML5 Boilerplate</li>
-        <li>Sass</li>
-      </ul>
-    </div>
-    
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-    <script>
-      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-      e.src='https://www.google-analytics.com/analytics.js';
-      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-      ga('create','UA-XXXXX-X');ga('send','pageview');
+
+    <!-- Enabler.js CDN call -->
+    <script src="https://s0.2mdn.net/ads/studio/Enabler.js"></script>
+
+    <!-- Head.js CDN call -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/headjs/1.0.3/head.load.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TweenLite.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TimelineLite.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/plugins/CSSPlugin.min.js"></script>
+
+    <!-- Enabler code -->
+    <script id="editable">
+      //Enabler is initialized
+      if (Enabler.isInitialized()) {
+        enablerInitialized();
+      } else {
+        Enabler.addEventListener(studio.events.StudioEvent.INIT, enablerInitialized);
+      }
+
+      function enablerInitialized() {
+        //Check for page load.
+        if (Enabler.isPageLoaded()) {
+          PoliteJSLOAD();
+        } else {
+          Enabler.addEventListener(studio.events.StudioEvent.PAGE_LOADED, PoliteJSLOAD);
+        }
+      }
+
+      function PoliteJSLOAD() {
+        head.load("scripts/main.js");
+      }
     </script>
+  </head>
+
+
+  <body>
+    <!-- Preloader -->
+    <div class="preloader-box">
+      <!-- <img class='preloader' src='images/loaderWheel.gif' id='preloader'></img> -->
+    </div>
+
+    <!-- Content -->
+    <div id="content" class="content">
+
+      <div id="legalSection" class="legal-section legal-section-closed">
+        <a href="#" class="legal-copy">Terms & credit check apply.<br /> 4G: Limited coverage - vodafone.co.uk/coverage</a>
+        <div id="closeLegalSection" onclick="legalSection()">
+          <a href="#" class="close-legal-section-copy">Close</a>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="links">
+      <!-- Campaign link -->
+      <div id="campaign-link" class="campaign-link" onclick="openCampaignLink()" ></div>
+
+      <!-- Legal section -->
+      <div id="legalLink" class="terms-link" onclick="legalSection()"></div>
+    </div>
 
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
     <!-- endbower -->
     <!-- endbuild -->
-    
+
     <!-- build:js scripts/main.js -->
-    <script src="scripts/main.js"></script>
+    <!-- <script src="main.js"></script> -->
     <!-- endbuild -->
   </body>
 </html>
