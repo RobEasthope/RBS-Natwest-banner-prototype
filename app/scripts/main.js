@@ -60,8 +60,11 @@ function initDynamicContent() {
 var tl = new TimelineLite();
 
 function animationSequence(){
+  // Hide preloader
+  tl.to('#preloader', 0, {css: { opacity: 1 }})
+
   // Background animation
-  tl.to('#bkg', 1, {css: { left: 0, opacity: 1 }})
+  .to('#bkg', 1, {css: { left: 0, opacity: 1 }})
 
   // F1 - Copy
   .to('#F1', 1, {css: { left: 0, opacity: 1 }})
