@@ -1,54 +1,84 @@
-'use strict';
-
 // SETUP
-// Define JS dependencies
+//For JS dependencies for polite load
 function loadJSDependencies() {
   head.load(
-    'https://code.createjs.com/easeljs-0.8.1.min.js',
-    'https://code.createjs.com/tweenjs-0.6.1.min.js',
-    'https://code.createjs.com/movieclip-0.8.1.min.js',
-    'https://code.createjs.com/preloadjs-0.4.1.min.js',
-    'https://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/plugins/CSSPlugin.min.js',
-    'https://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/easing/EasePack.min.js',
-    'https://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TweenLite.min.js',
-    'https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TimelineLite.min.js',
-    'https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/plugins/BezierPlugin.min.js'
+    "https://code.createjs.com/easeljs-0.8.1.min.js",
+    "https://code.createjs.com/tweenjs-0.6.1.min.js",
+    "https://code.createjs.com/movieclip-0.8.1.min.js",
+    "https://code.createjs.com/preloadjs-0.4.1.min.js",
+    "https://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/plugins/CSSPlugin.min.js",
+    "https://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/easing/EasePack.min.js",
+    "https://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TweenLite.min.js",
+    "https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TimelineLite.min.js",
+    "https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/plugins/BezierPlugin.min.js",
+    initDynamicContent
   );
 }
 
-// Define dynamic content
+// Load JS dependencies
+loadJSDependencies();
+
+// Load dynamic content
 function initDynamicContent() {
   // Enabler profile ID
   Enabler.setProfileId(1062200);
 
   // Stash dynamic content array with settings
   var devDynamicContent = {};
-  devDynamicContent.feed320x480 = [{}];
-  devDynamicContent.feed320x480[0]._id = 0;
-  devDynamicContent.feed320x480[0].id = 1;
-  devDynamicContent.feed320x480[0].reporting_label = '???';
-  devDynamicContent.feed320x480[0].startDate = {};
-  devDynamicContent.feed320x480[0].startDate.RawValue = '';
-  devDynamicContent.feed320x480[0].startDate.UtcValue = 0;
-  devDynamicContent.feed320x480[0].endDate = {};
-  devDynamicContent.feed320x480[0].endDate.RawValue = '';
-  devDynamicContent.feed320x480[0].endDate.UtcValue = 0;
+  devDynamicContent.Feed_320x480 = [{}];
+  devDynamicContent.Feed_320x480[0]._id = 0;
+  devDynamicContent.Feed_320x480[0].id = 1;
+  devDynamicContent.Feed_320x480[0].reporting_label = '???';
+  devDynamicContent.Feed_320x480[0].startDate = {};
+  devDynamicContent.Feed_320x480[0].startDate.RawValue = '';
+  devDynamicContent.Feed_320x480[0].startDate.UtcValue = 0;
+  devDynamicContent.Feed_320x480[0].endDate = {};
+  devDynamicContent.Feed_320x480[0].endDate.RawValue = '';
+  devDynamicContent.Feed_320x480[0].endDate.UtcValue = 0;
 
-  // Declare dynamic content file assets
-  devDynamicContent.feed320x480[0].content = {
-    // Vodafone rhombus
-    'bkg': { 'Type': 'file', 'Url': 'images/bkg.png'}
+  // Declare file assets
+  devDynamicContent.Feed_320x480[0].content = {
+    // Test content
+    "bkg": { "Type": "file", "Url": "images/bkg.jpg"}
+
   };
 
   // ???
-  devDynamicContent.feed320x480[0].DEFAULT = true;
-
-  // ???
+  devDynamicContent.Feed_320x480[0].DEFAULT = true;
   Enabler.setDevDynamicContent(devDynamicContent);
 
   // Add dynamic assets to DOM
-  // Bkg
-  document.getElementById('bkg').innerHTML += "<img src=" + dynamicContent.feed320x480[0].content.bkg.png.Url + " id='rhombus' class='absolute portrait rhombus'> </img>";
+  // Vodafone rhombus
+  document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_320x480[0].content['bkg']['Url'] + " id='bkg' class='absolute'></img>";
+
+  animationSequence();
+}
+
+
+
+// CAMPAIGN LINK
+// Open campaign link
+function openCampaignLink(){
+  console.log('Open campaign link');
+  Enabler.exit('clickthrough');
+}
+
+// LEGAL SECTION
+// Open and close legal section functionality
+function toggleLegalSection(){
+  // Get legal section ID
+  var legalSection = document.getElementById('legalSection');
+
+  // Open legal section
+  if (legalSection.classList.contains('legal-section-closed')) {
+    legalSection.classList.remove('legal-section-closed');
+    legalSection.classList.add('legal-section-open');
+    console.log('Open legal section');
+  } else {
+    legalSection.classList.remove('legal-section-open');
+    legalSection.classList.add('legal-section-closed');
+    console.log('Close legal section');
+  }
 }
 
 
@@ -56,9 +86,8 @@ function initDynamicContent() {
 
 
 // ANIMATIONS
-function animationSequence(){
-  // Init timeline
-  var tl = new TimelineLite();
+// Init timeline
+function animationSequence(tl){
 
   // Hide preloader
   tl.to('#preloader', 0, {css: { opacity: 1 }})
@@ -83,62 +112,19 @@ function animationSequence(){
   .to('#arrow', 1, {css: { left: 0, opacity: 1 }});
 }
 
+// Wire up event listeners and onCLick events
 // Restart animation sequence on orientation change
 window.addEventListener('resize', function() {
   console.log('Restart animation');
   tl.restart();
 }, false);
 
-
-// *
-
-
-// CAMPAIGN LINK
-// Open campaign link
-function openCampaignLink(){
-  console.log('Open campaign link');
-  Enabler.exit('clickthrough');
-}
-
 // Wire up openCampaignLink() to DOM element
 document.getElementById('campaign-link').onclick = function(){
   openCampaignLink();
 };
 
-
-// LEGAL SECTION
-// Open and close legal section functionality
-function toggleLegalSection(){
-  // Get legal section ID
-  var legalSection = document.getElementById('legalSection');
-
-  // Open legal section
-  if (legalSection.classList.contains('legal-section-closed')) {
-    legalSection.classList.remove('legal-section-closed');
-    legalSection.classList.add('legal-section-open');
-    console.log('Open legal section');
-  } else {
-    legalSection.classList.remove('legal-section-open');
-    legalSection.classList.add('legal-section-closed');
-    console.log('Close legal section');
-  }
-}
-
 // Wire up legalSection() to DOM element
 document.getElementById('closeLegalSection').onclick = function(){
   toggleLegalSection();
 };
-
-
-// *
-
-
-// INITIALISE BANNER
-// Load JS dependencies
-loadJSDependencies();
-
-// Load dynamic content
-initDynamicContent();
-
-// Start animation
-animationSequence();
