@@ -56,10 +56,10 @@ function initDynamicContent() {
 
 
 // ANIMATIONS
-// Init timeline
-var tl = new TimelineLite();
-
 function animationSequence(){
+  // Init timeline
+  var tl = new TimelineLite();
+
   // Hide preloader
   tl.to('#preloader', 0, {css: { opacity: 1 }})
 
