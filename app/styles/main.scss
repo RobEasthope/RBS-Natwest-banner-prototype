@@ -31,6 +31,18 @@ $banner-height-l: $banner-width-p;
 
 // *
 
+// Center banner for development
+body {
+  text-align: center;
+}
+
+.banner {
+  position: relative;
+  margin-top: 50px;
+  display: inline-block;
+}
+
+
 body {
   // Set some defaults
   width: 100%;
