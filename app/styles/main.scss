@@ -45,6 +45,12 @@ body {
   z-index: 200;
 }
 
+.banner {
+  @extend %sizing;
+  border: 1px solid #939598;
+  box-sizing: border-box;
+}
+
 .preloader{
   position:absolute;
   $preloader-width: 32px;
@@ -77,9 +83,6 @@ body {
   // If you can't click things this might be the reason why
   pointer-events: none;
 
-  border: 1px solid #939598;
-  box-sizing: border-box;
-
   @media (orientation: portrait) {
     width: $banner-width-p;
     height: $banner-height-p;
@@ -109,9 +112,6 @@ body {
 
   z-index: 800;
   opacity: 0.25;
-
-  box-sizing: border-box;
-  border-top: 1px solid black;
 }
 
 .terms-link {
