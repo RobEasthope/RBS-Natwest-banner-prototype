@@ -28,6 +28,18 @@ function lint(files, options) {
     return gulp.src(files)
       .pipe(reload({stream: true, once: true}))
       .pipe($.eslint(options))
+      .pipe($.eslint({
+        globals: {
+          head:false,
+          Enabler:false,
+          dynamicContent:false,
+          TimelineLite:false
+        },
+        rules: {
+            'quotes': 'false',
+            'no-underscore-dangle': 'false'
+        }
+      }))
       .pipe($.eslint.format())
       .pipe($.if(!browserSync.active, $.eslint.failAfterError()));
   };
