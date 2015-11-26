@@ -59,8 +59,9 @@ body {
 
 .banner {
   @extend %sizing;
-  border: 1px solid #939598;
-  box-sizing: border-box;
+
+  // border: 1px solid #939598;
+  // box-sizing: border-box;
 }
 
 .preloader{
