@@ -3,25 +3,14 @@
 
 // Settings & mixins
 // Set portrait orientation size only - landscape sizes dealt with automatically
-$banner-width-p: 320px;
-$banner-height-p: 480px;
-
-$banner-width-l: $banner-height-p;
-$banner-height-l: $banner-width-p;
+$banner-width: 320px;
+$banner-height: 480px;
 
 // Banner sizing
 %sizing {
   position: absolute;
-
-  @media (orientation: portrait) {
-    width: $banner-width-p;
-    height: $banner-height-p;
-  }
-
-  @media (orientation: landscape) {
-    width: $banner-width-l;
-    height: $banner-height-l;
-  }
+  width: $banner-width;
+  height: $banner-height;
 }
 
 // Hide assets
@@ -75,16 +64,9 @@ body {
   height:auto;
   z-index: 201;
 
+  top: ($banner-height / 2) - ($preloader-height / 2);
+  left: ($banner-width / 2) - ($preloader-width / 2);
 
-  @media (orientation: portrait) {
-    top: ($banner-height-p / 2) - ($preloader-height / 2);
-    left: ($banner-width-p / 2) - ($preloader-width / 2);
-  }
-
-  @media (orientation: landscape) {
-    top: ($banner-height-l / 2) - ($preloader-height / 2);
-    left: ($banner-width-l / 2) - ($preloader-width / 2);
-  }
 }
 
 // Content box
@@ -97,15 +79,7 @@ body {
   // If you can't click things this might be the reason why
   pointer-events: none;
 
-  @media (orientation: portrait) {
-    width: $banner-width-p;
-    height: $banner-height-p;
-  }
 
-  @media (orientation: landscape) {
-    width: $banner-width-l;
-    height: $banner-height-l;
-  }
 }
 
 .links {
@@ -143,13 +117,7 @@ body {
   position: absolute;
   z-index: 900;
 
-  @media (orientation: portrait) {
-    width: $banner-width-p;
-  }
-
-  @media (orientation: landscape) {
-    width: $banner-width-l;
-  }
+  width: $banner-width;
 
   right: 0;
   text-align: left;
