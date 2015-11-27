@@ -61,6 +61,16 @@ function initDynamicContent() {
   // Add dynamic assets to DOM
   // Vodafone rhombus
   document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_320x480[0].content['bkg']['Url'] + " id='bkg' class='absolute'></img>";
+  document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_320x480[0].content['logo']['Url'] + " id='logo' class='absolute'></img>";
+  document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_320x480[0].content['f1']['Url'] + " id='f1' class='absolute'></img>";
+  document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_320x480[0].content['f2']['Url'] + " id='f2' class='absolute'></img>";
+  document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_320x480[0].content['s1']['Url'] + " id='s1' class='absolute'></img>";
+  document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_320x480[0].content['s2']['Url'] + " id='s2' class='absolute'></img>";
+  document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_320x480[0].content['s3']['Url'] + " id='s3' class='absolute'></img>";
+  document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_320x480[0].content['f4']['Url'] + " id='f4' class='absolute'></img>";
+  document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_320x480[0].content['f5']['Url'] + " id='f5' class='absolute'></img>";
+  document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_320x480[0].content['arrow']['Url'] + " id='arrow' class='absolute'></img>";
+  document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_320x480[0].content['button']['Url'] + " id='button' class='absolute'></img>";
 
   animationSequence();
 }
