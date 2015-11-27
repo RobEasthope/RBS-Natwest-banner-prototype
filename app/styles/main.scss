@@ -229,63 +229,75 @@ body {
   position: absolute;
 }
 
+$bkg-movement: -30px;
+$frame-elements-movement: -15px;
+
 // Individual image styles
-.voda-logo {
-  z-index: 203;
+#bkg {
+  @extend %zero-opacity;
+  z-index: 201;
+  left: -30px;
 }
 
-.voda-logo-copy {
+#logo {
+  // @extend %zero-opacity;
+  z-index: 202;
+}
+
+#F1 {
+  @extend %zero-opacity;
+  z-index: 202;
+  top: $frame-elements-movement;
+}
+
+#F2 {
+  @extend %zero-opacity;
+  z-index: 202;
+  top: $frame-elements-movement;
+}
+
+#S1 {
+  @extend %zero-opacity;
+  z-index: 202;
+  top: $frame-elements-movement;
+}
+
+#S2 {
+  @extend %zero-opacity;
+  z-index: 202;
+  top: $frame-elements-movement;
+}
+
+#S3 {
+  @extend %zero-opacity;
+  z-index: 202;
+  top: $frame-elements-movement;
+}
+
+#legals {
+  @extend %zero-opacity;
+  z-index: 202;
+  top: $frame-elements-movement;
+}
+
+#F4 {
+  @extend %zero-opacity;
+  z-index: 202;
+  top: $frame-elements-movement;
+}
+
+#F5 {
+  @extend %zero-opacity;
+  z-index: 202;
+  top: $frame-elements-movement;
+}
+
+#cta {
   @extend %zero-opacity;
   z-index: 202;
 }
 
-.rhombus {
-  z-index: 201;
-
-  display: block;
-  transform-origin: 1382px 700px;
-
-  @media (orientation: portrait) {
-    top: -645px;
-    left: -1257px;
-  }
-
-  @media (orientation: landscape) {
-    top: -653px;
-    left: -1260px;
-  }
-}
-
-
-
-.cta-button {
+#arrow {
   @extend %zero-opacity;
-  z-index: 201;
-}
-
-.gear {
-  z-index: 200;
-
-  @media (orientation: portrait) {
-    left: 320px;
-  }
-
-  @media (orientation: landscape) {
-    left: 480px;
-  }
-}
-
-.headphones {
-  z-index: 201;
-  top: 130px;
-}
-
-.main-title {
-  @extend %zero-opacity;
-  z-index: 201;
-}
-
-.terms {
-  @extend %zero-opacity;
-  z-index: 201;
+  z-index: 202;
 }
