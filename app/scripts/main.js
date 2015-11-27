@@ -39,7 +39,18 @@ function initDynamicContent() {
   // Declare file assets
   devDynamicContent.Feed_320x480[0].content = {
     // Test content
-    "bkg": { "Type": "file", "Url": "images/bkg.jpg"}
+    "bkg": { "Type": "file", "Url": "images/bkg.jpg"},
+    "logo": { "Type": "file", "Url": "images/logo.png"},
+    "f1": { "Type": "file", "Url": "images/f1.png"},
+    "f2": { "Type": "file", "Url": "images/f2.png"},
+    "s1": { "Type": "file", "Url": "images/s1.png"},
+    "s2": { "Type": "file", "Url": "images/s2.png"},
+    "s3": { "Type": "file", "Url": "images/s3.png"},
+    "legals": { "Type": "file", "Url": "images/legals.png"},
+    "f4": { "Type": "file", "Url": "images/f4.png"},
+    "f5": { "Type": "file", "Url": "images/f5.png"},
+    "button": { "Type": "file", "Url": "images/button.png"},
+    "arrow": { "Type": "file", "Url": "images/arrow.png"},
 
   };
 
