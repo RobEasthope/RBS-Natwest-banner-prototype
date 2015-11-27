@@ -9,7 +9,7 @@ function loadJSDependencies() {
     "https://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/plugins/CSSPlugin.min.js",
     "https://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/easing/EasePack.min.js",
     "https://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TweenLite.min.js",
-    "https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TimelineLite.min.js",
+    "https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TimelineMax.min.js",
     "https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/plugins/BezierPlugin.min.js",
     initDynamicContent
   );
@@ -62,15 +62,16 @@ function initDynamicContent() {
   // Vodafone rhombus
   document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_320x480[0].content['bkg']['Url'] + " id='bkg' class='absolute'></img>";
   document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_320x480[0].content['logo']['Url'] + " id='logo' class='absolute'></img>";
-  document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_320x480[0].content['f1']['Url'] + " id='f1' class='absolute'></img>";
-  document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_320x480[0].content['f2']['Url'] + " id='f2' class='absolute'></img>";
-  document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_320x480[0].content['s1']['Url'] + " id='s1' class='absolute'></img>";
-  document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_320x480[0].content['s2']['Url'] + " id='s2' class='absolute'></img>";
-  document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_320x480[0].content['s3']['Url'] + " id='s3' class='absolute'></img>";
-  document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_320x480[0].content['f4']['Url'] + " id='f4' class='absolute'></img>";
-  document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_320x480[0].content['f5']['Url'] + " id='f5' class='absolute'></img>";
+  document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_320x480[0].content['f1']['Url'] + " id='F1' class='absolute'></img>";
+  document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_320x480[0].content['f2']['Url'] + " id='F2' class='absolute'></img>";
+  document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_320x480[0].content['s1']['Url'] + " id='S1' class='absolute'></img>";
+  document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_320x480[0].content['s2']['Url'] + " id='S2' class='absolute'></img>";
+  document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_320x480[0].content['s3']['Url'] + " id='S3' class='absolute'></img>";
+  document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_320x480[0].content['legals']['Url'] + " id='legals' class='absolute'></img>";
+  document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_320x480[0].content['f4']['Url'] + " id='F4' class='absolute'></img>";
+  document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_320x480[0].content['f5']['Url'] + " id='F5' class='absolute'></img>";
   document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_320x480[0].content['arrow']['Url'] + " id='arrow' class='absolute'></img>";
-  document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_320x480[0].content['button']['Url'] + " id='button' class='absolute'></img>";
+  document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_320x480[0].content['button']['Url'] + " id='cta' class='absolute'></img>";
 
   animationSequence();
 }
@@ -108,29 +109,47 @@ function toggleLegalSection(){
 
 // ANIMATIONS
 // Init timeline
-function animationSequence(tl){
+function animationSequence(){
+  // Init timeline
+  var tl = new TimelineLite();
 
+  var frameElementsMovement = 15
+
+  tl.restart();
   // Hide preloader
-  tl.to('#preloader', 0, {css: { opacity: 1 }})
+  // tl.to('#preloader', 0, {css: { opacity: 1 }})
 
   // Background animation
-  .to('#bkg', 1, {css: { left: 0, opacity: 1 }})
+  tl.to('#bkg', 1, {css: { left: 0, opacity: 1 }})
+  // Bank logo
+  // .to('#logo', 1, {css: { left: 0, opacity: 1 }})
 
   // F1 - Copy
-  .to('#F1', 1, {css: { left: 0, opacity: 1 }})
+  .to('#F1', 1, {css: { top: 0, opacity: 1 }})
+  .to('#F1', 1, {css: { top: frameElementsMovement, opacity: 0 }})
+
   // F2 - Copy
   .to('#F2', 1, {css: { left: 0, opacity: 1 }})
+  .to('#F2', 1, {css: { top: frameElementsMovement, opacity: 0 }})
+
   // F3 - Stats 1/2/3/legalcopy
   .to('#S1', 1, {css: { left: 0, opacity: 1 }})
-  .to('#S2', 1, {css: { left: 0, opacity: 1 }})
+  .to('#S2', 1, {css: {top: 0, opacity: 1 }})
   .to('#S3', 1, {css: { left: 0, opacity: 1 }})
   .to('#legals', 1, {css: { left: 0, opacity: 1 }})
+  .to('#S1', 1, {css: { top: frameElementsMovement, opacity: 0 }}, 'end-F3')
+  .to('#S2', 1, {css: { top: frameElementsMovement, opacity: 0 }}, 'end-F3')
+  .to('#S3', 1, {css: { top: frameElementsMovement, opacity: 0 }}, 'end-F3')
+  .to('#legals', 1, {css: { top: 20, opacity: 0 }}, 'end-F3')
   // F4 - Copy
-  .to('#F4', 1, {css: { left: 0, opacity: 1 }})
+  .to('#F4', 1, {css: { top: 0, opacity: 0 }})
+  .to('#F4', 1, {css: { top: frameElementsMovement, opacity: 0 }})
   // F5 - Copy/CTA button/Arrow
-  .to('#F5', 1, {css: { left: 0, opacity: 1 }})
+  .to('#F5', 1, {css: { top: 0, opacity: 1 }})
   .to('#cta', 1, {css: { left: 0, opacity: 1 }})
   .to('#arrow', 1, {css: { left: 0, opacity: 1 }});
+
+
 }
 
 // Wire up event listeners and onCLick events
