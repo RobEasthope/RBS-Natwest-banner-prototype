@@ -155,11 +155,11 @@ function animationSequence(){
   .to('#F4', frameAnimationTiming, {css: { top: movementDistance, opacity: 0 }}, holdTime)
 
   // F5 - Copy/CTA button/Arrow
-  .to('#F5', frameAnimationTiming, {css: { top: 0, opacity: 1 }})
-  .to('#button', frameAnimationTiming, {css: { opacity: 1 }})
-  .to('#legals', frameAnimationTiming, {css: { top: 0, opacity: 1 }})
-  .to('#disclaimer', frameAnimationTiming, {css: { top: 0, opacity: 1 }})
-  .to('#arrow', frameAnimationTiming, {css: { top: 0, left: 0, opacity: 1 }}, holdTime);
+  .to('#F5', frameAnimationTiming, {css: { top: 0, opacity: 1 }}, 'f5')
+  .to('#button', frameAnimationTiming, {css: { opacity: 1 }}, 'f5')
+  .to('#legals', frameAnimationTiming, {css: { top: 0, opacity: 1 }}, 'f5')
+  .to('#disclaimer', frameAnimationTiming, {css: { top: 0, opacity: 1 }}, 'f5')
+  .to('#arrow', frameAnimationTiming, {css: { top: 0, left: 0, opacity: 1 }}, 'f5');
 }
 
 // Wire up event listeners and onClick events
