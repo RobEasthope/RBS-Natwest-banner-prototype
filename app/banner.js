@@ -43,17 +43,17 @@ function initDynamicContent() {
   // Declare file assets
   devDynamicContent.Feed_160x600[0].content = {
     // Test content
-    "bkg": { "Type": "file", "Url": "images/bkg.jpg"},
-    "logo": { "Type": "file", "Url": "images/logo.png"},
-    "f1": { "Type": "file", "Url": "images/f1.png"},
-    "f2": { "Type": "file", "Url": "images/f2.png"},
-    "f3": { "Type": "file", "Url": "images/f3.png"},
-    "f4": { "Type": "file", "Url": "images/f4.png"},
-    "f5": { "Type": "file", "Url": "images/f5.png"},
-    "button": { "Type": "file", "Url": "images/button.png"},
-    "arrow": { "Type": "file", "Url": "images/arrow.png"},
-    "legals": { "Type": "file", "Url": "images/legals.png"},
-    "disclaimer": { "Type": "file", "Url": "images/disclaimer.png"}
+    "bkg": { "Type": "file", "Url": "bkg.jpg"},
+    "logo": { "Type": "file", "Url": "logo.png"},
+    "f1": { "Type": "file", "Url": "f1.png"},
+    "f2": { "Type": "file", "Url": "f2.png"},
+    "f3": { "Type": "file", "Url": "f3.png"},
+    "f4": { "Type": "file", "Url": "f4.png"},
+    "f5": { "Type": "file", "Url": "f5.png"},
+    "button": { "Type": "file", "Url": "button.png"},
+    "arrow": { "Type": "file", "Url": "arrow.png"},
+    "legals": { "Type": "file", "Url": "legals.png"},
+    "disclaimer": { "Type": "file", "Url": "disclaimer.png"}
   };
 
   // ???
@@ -77,9 +77,7 @@ function initDynamicContent() {
   animationSequence();
 }
 
-
 // *
-
 
 // CAMPAIGN LINK
 // Open campaign link
@@ -110,7 +108,7 @@ function toggleLegalSection(){
 
 // ANIMATIONS
 function animationSequence(){
-  
+
   // SETTINGS
   // Animation settings
   var movementDistance = 10;
