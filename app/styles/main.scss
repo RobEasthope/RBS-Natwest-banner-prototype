@@ -104,9 +104,7 @@ body {
   z-index: 800;
 }
 
-
 // *
-
 
 // IMAGE ASSETS
 // For absolute positioning the images
@@ -159,7 +157,6 @@ $frame-elements-movement: 10px;
 }
 
 #button {
-  // @extend %zero-opacity;
   z-index: 202;
   transform-origin: 46.25% 34.83%;
 }
@@ -174,11 +171,9 @@ $frame-elements-movement: 10px;
 #legals {
   @extend %zero-opacity;
   z-index: 202;
-  // top: $frame-elements-movement;
 }
 
 #disclaimer {
   @extend %zero-opacity;
   z-index: 202;
-  // top: $frame-elements-movement;
 }
