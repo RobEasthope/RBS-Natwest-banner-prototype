@@ -114,13 +114,13 @@ body {
   position: absolute;
 }
 
-$bkg-movement: -30px;
-$frame-elements-movement: -10px;
+$bkg-movement: ($banner-width / 3);
+$frame-elements-movement: 10px;
 
 // Individual image styles
 #bkg {
   z-index: 201;
-  left: -30px;
+  left: (-$bkg-movement);
 }
 
 #logo {
@@ -130,32 +130,32 @@ $frame-elements-movement: -10px;
 #F1 {
   @extend %zero-opacity;
   z-index: 202;
-  top: $frame-elements-movement;
+  top: (-$frame-elements-movement);
 }
 
 #F2 {
   @extend %zero-opacity;
   z-index: 202;
-  top: $frame-elements-movement;
+  top: (-$frame-elements-movement);
 }
 
 #F3 {
   @extend %zero-opacity;
   z-index: 202;
-  top: $frame-elements-movement;
+  top: (-$frame-elements-movement);
 }
 
 
 #F4 {
   @extend %zero-opacity;
   z-index: 202;
-  top: $frame-elements-movement;
+  top: (-$frame-elements-movement);
 }
 
 #F5 {
   @extend %zero-opacity;
   z-index: 202;
-  top: $frame-elements-movement;
+  top: (-$frame-elements-movement);
 }
 
 #button {
@@ -167,8 +167,8 @@ $frame-elements-movement: -10px;
 #arrow {
   @extend %zero-opacity;
   z-index: 202;
-  top: 30px;
-  left: $bkg-movement;
+  top: 20px;
+  left: -20px;
 }
 
 #legals {
