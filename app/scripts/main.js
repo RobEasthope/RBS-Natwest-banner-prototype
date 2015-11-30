@@ -114,7 +114,7 @@ function toggleLegalSection(){
 function animationSequence(){
   // SETTINGS
   // Animation settings
-  var movementDistance = 15;
+  var movementDistance = 10;
 
   // Animation timings
   var initialFadeIn = 0.4;
