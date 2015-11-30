@@ -1,0 +1,65 @@
+// BANNER ASSETS
+// Individual image styles
+#bkg {
+  z-index: $bkg-z-index;
+  left: (-$bkg-movement);
+}
+
+#logo {
+  z-index: $content-z-index;
+}
+
+#F1 {
+  @extend %zero-opacity;
+  z-index: $content-z-index;
+  top: (-$frame-elements-movement);
+}
+
+#F2 {
+  @extend %zero-opacity;
+  z-index: $content-z-index;
+  top: (-$frame-elements-movement);
+}
+
+#F3 {
+  @extend %zero-opacity;
+  z-index: $content-z-index;
+  top: (-$frame-elements-movement);
+}
+
+
+#F4 {
+  @extend %zero-opacity;
+  z-index: $content-z-index;
+  top: (-$frame-elements-movement);
+}
+
+#F5 {
+  @extend %zero-opacity;
+  z-index: $content-z-index;
+  top: (-$frame-elements-movement);
+}
+
+#button {
+  z-index: $content-z-index;
+  transform-origin: 46.25% 34.83%;
+}
+
+#arrow {
+  @extend %zero-opacity;
+  z-index: $content-z-index;
+  top: 20px;
+  left: -20px;
+}
+
+#legals {
+  @extend %zero-opacity;
+  z-index: $content-z-index;
+  left: (-$frame-elements-movement);
+}
+
+#disclaimer {
+  @extend %zero-opacity;
+  z-index: $content-z-index;
+  left: (-$frame-elements-movement);
+}

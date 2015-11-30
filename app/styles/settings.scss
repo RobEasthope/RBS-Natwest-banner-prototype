@@ -1,0 +1,28 @@
+// Settings & mixins
+// Set portrait orientation size only - landscape sizes dealt with automatically
+$banner-width: 160px;
+$banner-height: 600px;
+
+// Z-Indexing
+$bkg-z-index: 200;
+$content-z-index: 300;
+$border-z-index: 400;
+$campaign-link-z-index: 500;
+
+// Animations
+$bkg-movement: 55px;
+$frame-elements-movement: 10px;
+
+// *
+
+// Banner sizing
+%sizing {
+  position: absolute;
+  width: $banner-width;
+  height: $banner-height;
+}
+
+// Hide assets
+%zero-opacity {
+  opacity: 0;
+}

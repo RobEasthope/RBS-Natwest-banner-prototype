@@ -1,0 +1,75 @@
+// STRUCTURAL POSITIONING AND SIZING
+// Set some defaults
+body {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+}
+
+.banner {
+  @extend %sizing;
+}
+
+.border {
+  @extend %sizing;
+  position: absolute;
+  border: 1px solid #939598;
+  box-sizing: border-box;
+
+  z-index: $border-z-index
+}
+
+// Content box
+.content {
+  @extend %sizing;
+  overflow: hidden;
+
+  // If you can't click things this might be the reason why
+  pointer-events: none;
+}
+
+// Links
+.links {
+  @extend %sizing;
+}
+
+.campaign-link {
+  @extend %sizing;
+  position: absolute;
+
+  z-index: $campaign-link-z-index;
+}
+
+// For absolute positioning the images
+.absolute {
+  position: absolute;
+}
+
+// *
+
+// PRELOADER
+.preloader-bkg {
+  @extend %sizing;
+
+  z-index: 200;
+}
+
+.preloader{
+  position:absolute;
+  $preloader-width: 32px;
+  $preloader-height: 32px;
+
+  width: $preloader-width;
+  height: $preloader-height;
+  height:auto;
+  z-index: 201;
+
+  top: ($banner-height / 2) - ($preloader-height / 2);
+  left: ($banner-width / 2) - ($preloader-width / 2);
+}
+
+.preloader-bkg {
+  @extend %sizing;
+  background-color: white;
+  opacity: 1;
+}
