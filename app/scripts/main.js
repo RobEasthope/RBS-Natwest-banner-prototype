@@ -111,45 +111,44 @@ function toggleLegalSection(){
 
 
 // ANIMATIONS
-// Init timeline
 function animationSequence(){
   // Init timeline
   var tl = new TimelineLite();
 
+  // Animation settings
   var frameElementsMovement = 15
 
-  // Hide preloader
-  // tl.to('#preloader', 0, {css: { opacity: 1 }})
+  var bkgAnimationTiming = 1
+  var fadeTimings = 0.4
+  var holdTime = "+=2"
+
+
 
   // Background animation
-  tl.to('#bkg', 1, {css: { left: 0, opacity: 1 }})
+  tl.to('#bkg', bkgAnimationTiming, {css: { left: 0, opacity: 1 }})
   // Bank logo
   // .to('#logo', 1, {css: { left: 0, opacity: 1 }})
 
   // F1 - Copy
-  .to('#F1', 1, {css: { top: 0, opacity: 1 }})
-  .to('#F1', 1, {css: { top: frameElementsMovement, opacity: 0 }})
+  .to('#F1', fadeTimings, {css: { top: 0, opacity: 1 }})
+  .to('#F1', fadeTimings, {css: { top: frameElementsMovement, opacity: 0 }}, holdTime)
 
   // F2 - Copy
-  .to('#F2', 1, {css: { top: 0, opacity: 1 }})
-  .to('#F2', 1, {css: { top: frameElementsMovement, opacity: 0 }})
+  .to('#F2', fadeTimings, {css: { top: 0, opacity: 1 }})
+  .to('#F2', fadeTimings, {css: { top: frameElementsMovement, opacity: 0 }}, holdTime)
 
   // F3 - Stats 1/2/3/legalcopy
-  .to('#S1', 1, {css: { top: 0, opacity: 1 }})
-  .to('#S2', 1, {css: {top: 0, opacity: 1 }})
-  .to('#S3', 1, {css: { top: 0, opacity: 1 }})
-  .to('#legals', 1, {css: { top: 0, opacity: 1 }})
-  .to('#S1', 1, {css: { top: frameElementsMovement, opacity: 0 }}, 'end-F3')
-  .to('#S2', 1, {css: { top: frameElementsMovement, opacity: 0 }}, 'end-F3')
-  .to('#S3', 1, {css: { top: frameElementsMovement, opacity: 0 }}, 'end-F3')
-  .to('#legals', 1, {css: { top: 20, opacity: 0 }}, 'end-F3')
+  .to('#S1', fadeTimings, {css: { top: 0, opacity: 1 }})
+  .to('#S1', fadeTimings, {css: { top: frameElementsMovement, opacity: 0 }}, holdTime)
+
   // F4 - Copy
-  .to('#F4', 1, {css: { top: 0, opacity: 0 }})
-  .to('#F4', 1, {css: { top: frameElementsMovement, opacity: 0 }})
+  .to('#F4', fadeTimings, {css: { top: 0, opacity: 1 }})
+  .to('#F4', fadeTimings, {css: { top: frameElementsMovement, opacity: 0 }}, holdTime)
+
   // F5 - Copy/CTA button/Arrow
-  .to('#F5', 1, {css: { top: 0, opacity: 1 }})
-  .to('#cta', 1, {css: { top: 0, opacity: 1 }})
-  .to('#arrow', 1, {css: { top: 0, opacity: 1 }});
+  .to('#F5', fadeTimings, {css: { top: 0, opacity: 1 }})
+  .to('#cta', fadeTimings, {css: { top: 0, opacity: 1 }})
+  .to('#arrow', fadeTimings, {css: { top: 0, opacity: 1 }});
 }
 
 // Wire up event listeners and onClick events
