@@ -159,8 +159,9 @@ $frame-elements-movement: -15px;
 }
 
 #button {
-  @extend %zero-opacity;
+  // @extend %zero-opacity;
   z-index: 202;
+  transform-origin: 46.25% 34.83%;
 }
 
 #arrow {
@@ -173,11 +174,11 @@ $frame-elements-movement: -15px;
 #legals {
   @extend %zero-opacity;
   z-index: 202;
-  top: $frame-elements-movement;
+  // top: $frame-elements-movement;
 }
 
 #disclaimer {
   @extend %zero-opacity;
   z-index: 202;
-  top: $frame-elements-movement;
+  // top: $frame-elements-movement;
 }
