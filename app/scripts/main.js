@@ -106,12 +106,11 @@ function toggleLegalSection(){
   }
 }
 
-
 // *
-
 
 // ANIMATIONS
 function animationSequence(){
+  
   // SETTINGS
   // Animation settings
   var movementDistance = 10;
@@ -121,11 +120,10 @@ function animationSequence(){
   var bkgAnimationTiming = 1;
   var frameAnimationTiming = 0.6;
   var holdTime = "+=2";
-  var finalHoldTime = 2;
+  var finalHoldTime = 3;
 
   // Init timeline
   var tl = new TimelineMax({repeat:1, repeatDelay: finalHoldTime});
-
 
   // *
 
@@ -133,35 +131,31 @@ function animationSequence(){
   tl.to('#preloader', 0, {css: { opacity: 0 }})
   .to('#preloader-bkg', initialFadeIn, {css: { opacity: 0 }})
 
-  // Fade in background and logo
-  // .to('#bkg', 0.4, {css: {opacity: 1 }}, 'start')
-  // .to('#logo', 0.4, {css: {opacity: 1 }}, 'start')
-
-  // Background animation
+  // Slide in background
   .to('#bkg', bkgAnimationTiming, {css: { left: 0 }})
 
-  // F1 - Copy
-  .to('#F1', frameAnimationTiming, {css: { top: 0, opacity: 1 }})
+  // Frame #1
+  .to('#F1', frameAnimationTiming, {css: { top: 0, left: 0, opacity: 1 }})
   .to('#F1', frameAnimationTiming, {css: { top: movementDistance, opacity: 0 }}, holdTime)
 
-  // F2 - Copy
-  .to('#F2', frameAnimationTiming, {css: { top: 0, opacity: 1 }})
+  // Frame #2
+  .to('#F2', frameAnimationTiming, {css: { top: 0, left: 0, opacity: 1 }})
   .to('#F2', frameAnimationTiming, {css: { top: movementDistance, opacity: 0 }}, holdTime)
 
-  // F3 - Stats 1/2/3/legalcopy
-  .to('#F3', frameAnimationTiming, {css: { top: 0, opacity: 1 }})
+  // Frame #3
+  .to('#F3', frameAnimationTiming, {css: { top: 0, left: 0, opacity: 1 }})
   .to('#F3', frameAnimationTiming, {css: { top: movementDistance, opacity: 0 }}, holdTime)
 
-  // F4 - Copy
-  .to('#F4', frameAnimationTiming, {css: { top: 0, opacity: 1 }})
+  // Frame #4
+  .to('#F4', frameAnimationTiming, {css: { top: 0, left: 0, opacity: 1 }})
   .to('#F4', frameAnimationTiming, {css: { top: movementDistance, opacity: 0 }}, holdTime)
 
-  // F5 - Copy/CTA button/Arrow
-  .to('#F5', frameAnimationTiming, {css: { top: 0, opacity: 1 }}, 'f5')
-  .from('#button', frameAnimationTiming, {css: { opacity: 0, scaleX: 0, scaleY: 0 }})
-  .to('#legals', frameAnimationTiming, {css: { top: 0, opacity: 1 }})
-  .to('#disclaimer', frameAnimationTiming, {css: { top: 0, opacity: 1 }})
-  .to('#arrow', frameAnimationTiming, {css: { top: 0, left: 0, opacity: 1 }});
+  // Frame #5
+  .to('#F5', frameAnimationTiming, {css: { top: 0, left: 0, opacity: 1 }}, 'f5')
+  .to('#legals', frameAnimationTiming, {css: { top: 0, left: 0, opacity: 1 }}, 'f5')
+  .to('#disclaimer', frameAnimationTiming, {css: { top: 0, left: 0, opacity: 1 }}, 'f5')
+  .from('#button', frameAnimationTiming, {css: { scaleX: 0, scaleY: 0, opacity: 0 }}, 'f5')
+  .to('#arrow', frameAnimationTiming, {css: { top: 0, left: 0, opacity: 1 }}, 'f5');
 }
 
 // Wire up event listeners and onClick events
