@@ -115,7 +115,7 @@ function toggleLegalSection(){
 // ANIMATIONS
 function animationSequence(){
   // Init timeline
-  var tl = new TimelineLite();
+  var tl = new TimelineMax();
 
   // Animation settings
   var frameElementsMovement = 15;
