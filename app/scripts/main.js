@@ -15,7 +15,7 @@ function loadJSDependencies() {
   );
 }
 
-// Load JS dependencies
+// Load JS dependencies immediately
 loadJSDependencies();
 
 // Load dynamic content
@@ -36,6 +36,8 @@ function initDynamicContent() {
   devDynamicContent.Feed_320x480[0].endDate.RawValue = '';
   devDynamicContent.Feed_320x480[0].endDate.UtcValue = 0;
 
+  // *
+
   // Declare file assets
   devDynamicContent.Feed_320x480[0].content = {
     // Test content
@@ -50,8 +52,7 @@ function initDynamicContent() {
     "f4": { "Type": "file", "Url": "images/f4.png"},
     "f5": { "Type": "file", "Url": "images/f5.png"},
     "button": { "Type": "file", "Url": "images/button.png"},
-    "arrow": { "Type": "file", "Url": "images/arrow.png"},
-
+    "arrow": { "Type": "file", "Url": "images/arrow.png"}
   };
 
   // ???
@@ -59,7 +60,6 @@ function initDynamicContent() {
   Enabler.setDevDynamicContent(devDynamicContent);
 
   // Add dynamic assets to DOM
-  // Vodafone rhombus
   document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_320x480[0].content['bkg']['Url'] + " id='bkg' class='absolute'></img>";
   document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_320x480[0].content['logo']['Url'] + " id='logo' class='absolute'></img>";
   document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_320x480[0].content['f1']['Url'] + " id='F1' class='absolute'></img>";
@@ -73,9 +73,12 @@ function initDynamicContent() {
   document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_320x480[0].content['arrow']['Url'] + " id='arrow' class='absolute'></img>";
   document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_320x480[0].content['button']['Url'] + " id='cta' class='absolute'></img>";
 
+  // Begin animation sequence
   animationSequence();
 }
 
+
+// *
 
 
 // CAMPAIGN LINK
@@ -148,11 +151,9 @@ function animationSequence(){
   .to('#F5', 1, {css: { top: 0, opacity: 1 }})
   .to('#cta', 1, {css: { left: 0, opacity: 1 }})
   .to('#arrow', 1, {css: { left: 0, opacity: 1 }});
-
-
 }
 
-// Wire up event listeners and onCLick events
+// Wire up event listeners and onClick events
 // Restart animation sequence on orientation change
 window.addEventListener('resize', function() {
   console.log('Restart animation');
