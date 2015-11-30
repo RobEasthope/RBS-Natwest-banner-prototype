@@ -118,7 +118,6 @@ function animationSequence(){
 
   var frameElementsMovement = 15
 
-  tl.restart();
   // Hide preloader
   // tl.to('#preloader', 0, {css: { opacity: 1 }})
 
@@ -132,14 +131,14 @@ function animationSequence(){
   .to('#F1', 1, {css: { top: frameElementsMovement, opacity: 0 }})
 
   // F2 - Copy
-  .to('#F2', 1, {css: { left: 0, opacity: 1 }})
+  .to('#F2', 1, {css: { top: 0, opacity: 1 }})
   .to('#F2', 1, {css: { top: frameElementsMovement, opacity: 0 }})
 
   // F3 - Stats 1/2/3/legalcopy
-  .to('#S1', 1, {css: { left: 0, opacity: 1 }})
+  .to('#S1', 1, {css: { top: 0, opacity: 1 }})
   .to('#S2', 1, {css: {top: 0, opacity: 1 }})
-  .to('#S3', 1, {css: { left: 0, opacity: 1 }})
-  .to('#legals', 1, {css: { left: 0, opacity: 1 }})
+  .to('#S3', 1, {css: { top: 0, opacity: 1 }})
+  .to('#legals', 1, {css: { top: 0, opacity: 1 }})
   .to('#S1', 1, {css: { top: frameElementsMovement, opacity: 0 }}, 'end-F3')
   .to('#S2', 1, {css: { top: frameElementsMovement, opacity: 0 }}, 'end-F3')
   .to('#S3', 1, {css: { top: frameElementsMovement, opacity: 0 }}, 'end-F3')
@@ -149,8 +148,8 @@ function animationSequence(){
   .to('#F4', 1, {css: { top: frameElementsMovement, opacity: 0 }})
   // F5 - Copy/CTA button/Arrow
   .to('#F5', 1, {css: { top: 0, opacity: 1 }})
-  .to('#cta', 1, {css: { left: 0, opacity: 1 }})
-  .to('#arrow', 1, {css: { left: 0, opacity: 1 }});
+  .to('#cta', 1, {css: { top: 0, opacity: 1 }})
+  .to('#arrow', 1, {css: { top: 0, opacity: 1 }});
 }
 
 // Wire up event listeners and onClick events
