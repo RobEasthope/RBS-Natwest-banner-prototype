@@ -47,9 +47,7 @@ function initDynamicContent() {
     "logo": { "Type": "file", "Url": "images/logo.png"},
     "f1": { "Type": "file", "Url": "images/f1.png"},
     "f2": { "Type": "file", "Url": "images/f2.png"},
-    "s1": { "Type": "file", "Url": "images/s1.png"},
-    "s2": { "Type": "file", "Url": "images/s2.png"},
-    "s3": { "Type": "file", "Url": "images/s3.png"},
+    "f3": { "Type": "file", "Url": "images/f3.png"},
     "legals": { "Type": "file", "Url": "images/legals.png"},
     "f4": { "Type": "file", "Url": "images/f4.png"},
     "f5": { "Type": "file", "Url": "images/f5.png"},
@@ -66,9 +64,7 @@ function initDynamicContent() {
   document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_160x600[0].content['logo']['Url'] + " id='logo' class='absolute'></img>";
   document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_160x600[0].content['f1']['Url'] + " id='F1' class='absolute'></img>";
   document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_160x600[0].content['f2']['Url'] + " id='F2' class='absolute'></img>";
-  document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_160x600[0].content['s1']['Url'] + " id='S1' class='absolute'></img>";
-  document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_160x600[0].content['s2']['Url'] + " id='S2' class='absolute'></img>";
-  document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_160x600[0].content['s3']['Url'] + " id='S3' class='absolute'></img>";
+  document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_160x600[0].content['f3']['Url'] + " id='F3' class='absolute'></img>";
   document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_160x600[0].content['legals']['Url'] + " id='legals' class='absolute'></img>";
   document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_160x600[0].content['f4']['Url'] + " id='F4' class='absolute'></img>";
   document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_160x600[0].content['f5']['Url'] + " id='F5' class='absolute'></img>";
@@ -149,8 +145,8 @@ function animationSequence(){
   .to('#F2', frameAnimationTiming, {css: { top: movementDistance, opacity: 0 }}, holdTime)
 
   // F3 - Stats 1/2/3/legalcopy
-  .to('#S1', frameAnimationTiming, {css: { top: 0, opacity: 1 }})
-  .to('#S1', frameAnimationTiming, {css: { top: movementDistance, opacity: 0 }}, holdTime)
+  .to('#F3', frameAnimationTiming, {css: { top: 0, opacity: 1 }})
+  .to('#F3', frameAnimationTiming, {css: { top: movementDistance, opacity: 0 }}, holdTime)
 
   // F4 - Copy
   .to('#F4', frameAnimationTiming, {css: { top: 0, opacity: 1 }})

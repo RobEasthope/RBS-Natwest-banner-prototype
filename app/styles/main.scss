@@ -139,29 +139,12 @@ $frame-elements-movement: -15px;
   top: $frame-elements-movement;
 }
 
-#S1 {
+#F3 {
   @extend %zero-opacity;
   z-index: 202;
   top: $frame-elements-movement;
 }
 
-#S2 {
-  @extend %zero-opacity;
-  z-index: 202;
-  top: $frame-elements-movement;
-}
-
-#S3 {
-  @extend %zero-opacity;
-  z-index: 202;
-  top: $frame-elements-movement;
-}
-
-#legals {
-  @extend %zero-opacity;
-  z-index: 202;
-  top: $frame-elements-movement;
-}
 
 #F4 {
   @extend %zero-opacity;
@@ -183,4 +166,10 @@ $frame-elements-movement: -15px;
 #arrow {
   @extend %zero-opacity;
   z-index: 202;
+}
+
+#legals {
+  @extend %zero-opacity;
+  z-index: 202;
+  top: $frame-elements-movement;
 }
