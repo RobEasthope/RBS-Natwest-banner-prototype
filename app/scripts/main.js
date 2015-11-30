@@ -1,3 +1,4 @@
+'use strict';
 // SETUP
 //For JS dependencies for polite load
 function loadJSDependencies() {
@@ -116,18 +117,18 @@ function animationSequence(){
   var tl = new TimelineLite();
 
   // Animation settings
-  var frameElementsMovement = 15
+  var frameElementsMovement = 15;
 
-  var bkgAnimationTiming = 1
-  var fadeTimings = 0.4
-  var holdTime = "+=2"
+  var bkgAnimationTiming = 1;
+  var fadeTimings = 0.4;
+  var holdTime = "+=2";
 
   // Hide preloader
   tl.to('#preloader', 0, {css: { opacity: 0 }}, 'preloader')
-  tl.to('#preloader-bkg', 0, {css: { opacity: 0 }}, 'preloader')
+  .to('#preloader-bkg', 0, {css: { opacity: 0 }}, 'preloader')
 
   // Background animation
-  tl.to('#bkg', bkgAnimationTiming, {css: { left: 0, opacity: 1 }})
+  .to('#bkg', bkgAnimationTiming, {css: { left: 0, opacity: 1 }})
   // Bank logo
   // .to('#logo', 1, {css: { left: 0, opacity: 1 }})
 
