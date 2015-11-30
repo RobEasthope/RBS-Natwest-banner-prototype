@@ -119,7 +119,7 @@ function animationSequence(){
   // Animation timings
   var initialFadeIn = 0.4;
   var bkgAnimationTiming = 1;
-  var frameAnimationTiming = 0.4;
+  var frameAnimationTiming = 0.6;
   var holdTime = "+=2";
   var finalHoldTime = 2;
 
