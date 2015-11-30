@@ -71,6 +71,7 @@ body {
 .preloader-bkg {
   @extend %sizing;
   background-color: white;
+  opacity: 1;
 }
 
 // Content box
@@ -118,7 +119,7 @@ $frame-elements-movement: -15px;
 
 // Individual image styles
 #bkg {
-  @extend %zero-opacity;
+  // @extend %zero-opacity;
   z-index: 201;
   left: -30px;
 }
