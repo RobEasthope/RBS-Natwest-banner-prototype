@@ -167,8 +167,3 @@ function animationSequence(){
 document.getElementById('campaign-link').onclick = function(){
   openCampaignLink();
 };
-
-// Wire up legalSection() to DOM element
-document.getElementById('closeLegalSection').onclick = function(){
-  toggleLegalSection();
-};
