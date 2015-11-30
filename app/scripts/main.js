@@ -1,4 +1,5 @@
 'use strict';
+
 // SETUP
 //For JS dependencies for polite load
 function loadJSDependencies() {
