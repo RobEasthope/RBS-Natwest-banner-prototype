@@ -171,9 +171,11 @@ $frame-elements-movement: 10px;
 #legals {
   @extend %zero-opacity;
   z-index: 202;
+  left: (-$frame-elements-movement);
 }
 
 #disclaimer {
   @extend %zero-opacity;
   z-index: 202;
+  left: (-$frame-elements-movement);
 }
