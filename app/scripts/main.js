@@ -156,12 +156,6 @@ function animationSequence(){
 }
 
 // Wire up event listeners and onClick events
-// Restart animation sequence on orientation change
-window.addEventListener('resize', function() {
-  console.log('Restart animation');
-  tl.restart();
-}, false);
-
 // Wire up openCampaignLink() to DOM element
 document.getElementById('campaign-link').onclick = function(){
   openCampaignLink();
