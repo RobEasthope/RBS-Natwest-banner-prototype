@@ -122,7 +122,9 @@ function animationSequence(){
   var fadeTimings = 0.4
   var holdTime = "+=2"
 
-
+  // Hide preloader
+  tl.to('#preloader', 0, {css: { opacity: 0 }}, 'preloader')
+  tl.to('#preloader-bkg', 0, {css: { opacity: 0 }}, 'preloader')
 
   // Background animation
   tl.to('#bkg', bkgAnimationTiming, {css: { left: 0, opacity: 1 }})

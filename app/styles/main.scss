@@ -69,6 +69,11 @@ body {
 
 }
 
+.preloader-bkg {
+  @extend %sizing;
+  background-color: white;
+}
+
 // Content box
 .content {
   @extend %sizing;
