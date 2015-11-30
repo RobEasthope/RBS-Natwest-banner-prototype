@@ -48,11 +48,12 @@ function initDynamicContent() {
     "f1": { "Type": "file", "Url": "images/f1.png"},
     "f2": { "Type": "file", "Url": "images/f2.png"},
     "f3": { "Type": "file", "Url": "images/f3.png"},
-    "legals": { "Type": "file", "Url": "images/legals.png"},
     "f4": { "Type": "file", "Url": "images/f4.png"},
     "f5": { "Type": "file", "Url": "images/f5.png"},
     "button": { "Type": "file", "Url": "images/button.png"},
-    "arrow": { "Type": "file", "Url": "images/arrow.png"}
+    "arrow": { "Type": "file", "Url": "images/arrow.png"},
+    "legals": { "Type": "file", "Url": "images/legals.png"},
+    "disclaimer": { "Type": "file", "Url": "images/disclaimer.png"}
   };
 
   // ???
@@ -65,11 +66,12 @@ function initDynamicContent() {
   document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_160x600[0].content['f1']['Url'] + " id='F1' class='absolute'></img>";
   document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_160x600[0].content['f2']['Url'] + " id='F2' class='absolute'></img>";
   document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_160x600[0].content['f3']['Url'] + " id='F3' class='absolute'></img>";
-  document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_160x600[0].content['legals']['Url'] + " id='legals' class='absolute'></img>";
   document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_160x600[0].content['f4']['Url'] + " id='F4' class='absolute'></img>";
   document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_160x600[0].content['f5']['Url'] + " id='F5' class='absolute'></img>";
+  document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_160x600[0].content['button']['Url'] + " id='button' class='absolute'></img>";
   document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_160x600[0].content['arrow']['Url'] + " id='arrow' class='absolute'></img>";
-  document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_160x600[0].content['button']['Url'] + " id='cta' class='absolute'></img>";
+  document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_160x600[0].content['legals']['Url'] + " id='legals' class='absolute'></img>";
+  document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_160x600[0].content['disclaimer']['Url'] + " id='disclaimer' class='absolute'></img>";
 
   // Begin animation sequence
   animationSequence();
@@ -154,7 +156,9 @@ function animationSequence(){
 
   // F5 - Copy/CTA button/Arrow
   .to('#F5', frameAnimationTiming, {css: { top: 0, opacity: 1 }})
-  .to('#cta', frameAnimationTiming, {css: { top: 0, opacity: 1 }})
+  .to('#button', frameAnimationTiming, {css: { opacity: 1 }})
+  .to('#legals', frameAnimationTiming, {css: { top: 0, opacity: 1 }})
+  .to('#disclaimer', frameAnimationTiming, {css: { top: 0, opacity: 1 }})
   .to('#arrow', frameAnimationTiming, {css: { top: 0, left: 0, opacity: 1 }}, holdTime);
 }
 

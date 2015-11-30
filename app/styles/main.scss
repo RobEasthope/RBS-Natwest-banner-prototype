@@ -158,7 +158,7 @@ $frame-elements-movement: -15px;
   top: $frame-elements-movement;
 }
 
-#cta {
+#button {
   @extend %zero-opacity;
   z-index: 202;
 }
@@ -171,6 +171,12 @@ $frame-elements-movement: -15px;
 }
 
 #legals {
+  @extend %zero-opacity;
+  z-index: 202;
+  top: $frame-elements-movement;
+}
+
+#disclaimer {
   @extend %zero-opacity;
   z-index: 202;
   top: $frame-elements-movement;
