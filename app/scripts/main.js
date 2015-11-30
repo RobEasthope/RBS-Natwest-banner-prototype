@@ -27,21 +27,21 @@ function initDynamicContent() {
 
   // Stash dynamic content array with settings
   var devDynamicContent = {};
-  devDynamicContent.Feed_320x480 = [{}];
-  devDynamicContent.Feed_320x480[0]._id = 0;
-  devDynamicContent.Feed_320x480[0].id = 1;
-  devDynamicContent.Feed_320x480[0].reporting_label = '???';
-  devDynamicContent.Feed_320x480[0].startDate = {};
-  devDynamicContent.Feed_320x480[0].startDate.RawValue = '';
-  devDynamicContent.Feed_320x480[0].startDate.UtcValue = 0;
-  devDynamicContent.Feed_320x480[0].endDate = {};
-  devDynamicContent.Feed_320x480[0].endDate.RawValue = '';
-  devDynamicContent.Feed_320x480[0].endDate.UtcValue = 0;
+  devDynamicContent.Feed_160x600 = [{}];
+  devDynamicContent.Feed_160x600[0]._id = 0;
+  devDynamicContent.Feed_160x600[0].id = 1;
+  devDynamicContent.Feed_160x600[0].reporting_label = '???';
+  devDynamicContent.Feed_160x600[0].startDate = {};
+  devDynamicContent.Feed_160x600[0].startDate.RawValue = '';
+  devDynamicContent.Feed_160x600[0].startDate.UtcValue = 0;
+  devDynamicContent.Feed_160x600[0].endDate = {};
+  devDynamicContent.Feed_160x600[0].endDate.RawValue = '';
+  devDynamicContent.Feed_160x600[0].endDate.UtcValue = 0;
 
   // *
 
   // Declare file assets
-  devDynamicContent.Feed_320x480[0].content = {
+  devDynamicContent.Feed_160x600[0].content = {
     // Test content
     "bkg": { "Type": "file", "Url": "images/bkg.jpg"},
     "logo": { "Type": "file", "Url": "images/logo.png"},
@@ -58,22 +58,22 @@ function initDynamicContent() {
   };
 
   // ???
-  devDynamicContent.Feed_320x480[0].DEFAULT = true;
+  devDynamicContent.Feed_160x600[0].DEFAULT = true;
   Enabler.setDevDynamicContent(devDynamicContent);
 
   // Add dynamic assets to DOM
-  document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_320x480[0].content['bkg']['Url'] + " id='bkg' class='absolute'></img>";
-  document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_320x480[0].content['logo']['Url'] + " id='logo' class='absolute'></img>";
-  document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_320x480[0].content['f1']['Url'] + " id='F1' class='absolute'></img>";
-  document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_320x480[0].content['f2']['Url'] + " id='F2' class='absolute'></img>";
-  document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_320x480[0].content['s1']['Url'] + " id='S1' class='absolute'></img>";
-  document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_320x480[0].content['s2']['Url'] + " id='S2' class='absolute'></img>";
-  document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_320x480[0].content['s3']['Url'] + " id='S3' class='absolute'></img>";
-  document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_320x480[0].content['legals']['Url'] + " id='legals' class='absolute'></img>";
-  document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_320x480[0].content['f4']['Url'] + " id='F4' class='absolute'></img>";
-  document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_320x480[0].content['f5']['Url'] + " id='F5' class='absolute'></img>";
-  document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_320x480[0].content['arrow']['Url'] + " id='arrow' class='absolute'></img>";
-  document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_320x480[0].content['button']['Url'] + " id='cta' class='absolute'></img>";
+  document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_160x600[0].content['bkg']['Url'] + " id='bkg' class='absolute'></img>";
+  document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_160x600[0].content['logo']['Url'] + " id='logo' class='absolute'></img>";
+  document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_160x600[0].content['f1']['Url'] + " id='F1' class='absolute'></img>";
+  document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_160x600[0].content['f2']['Url'] + " id='F2' class='absolute'></img>";
+  document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_160x600[0].content['s1']['Url'] + " id='S1' class='absolute'></img>";
+  document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_160x600[0].content['s2']['Url'] + " id='S2' class='absolute'></img>";
+  document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_160x600[0].content['s3']['Url'] + " id='S3' class='absolute'></img>";
+  document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_160x600[0].content['legals']['Url'] + " id='legals' class='absolute'></img>";
+  document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_160x600[0].content['f4']['Url'] + " id='F4' class='absolute'></img>";
+  document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_160x600[0].content['f5']['Url'] + " id='F5' class='absolute'></img>";
+  document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_160x600[0].content['arrow']['Url'] + " id='arrow' class='absolute'></img>";
+  document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_160x600[0].content['button']['Url'] + " id='cta' class='absolute'></img>";
 
   // Begin animation sequence
   animationSequence();
