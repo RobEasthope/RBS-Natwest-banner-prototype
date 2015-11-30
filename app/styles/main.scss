@@ -66,7 +66,6 @@ body {
 
   top: ($banner-height / 2) - ($preloader-height / 2);
   left: ($banner-width / 2) - ($preloader-width / 2);
-
 }
 
 .preloader-bkg {
@@ -83,8 +82,6 @@ body {
 
   // If you can't click things this might be the reason why
   pointer-events: none;
-
-
 }
 
 .links {
@@ -104,97 +101,11 @@ body {
   position: absolute;
 
   z-index: 800;
-  opacity: 0.25;
 }
 
-.terms-link {
-  position: absolute;
-  z-index: 900;
-
-  width: 60px;
-  height: 30px;
-
-  bottom: 0;
-  right: 0;
-}
-
-.legal-section {
-  position: absolute;
-  z-index: 900;
-
-  width: $banner-width;
-
-  right: 0;
-  text-align: left;
-  background-color: white;
-
-  box-sizing: border-box;
-  border-top: 1px solid #bcbcbd;
-  padding: 1px 0 1px;
-
-  transition: all 0.4s;
-}
-
-.legal-copy {
-  display: inline-block;
-  font-family: sans-serif;
-  font-size: 10px;
-  color: #333;
-  text-decoration: none;
-  margin-left: 5px;
-}
-
-// Open and close legl section
-.legal-section-closed {
-  bottom: -30px
-}
-
-.legal-section-open {
-  bottom: 0px
-}
-
-
-#closeLegalSection {
-  position: absolute;
-  z-index: 900;
-
-  width: 60px;
-  height: 28px;
-
-  bottom: 0;
-  right: 0;
-
-  box-sizing: border-box;
-  border-left: 1px solid #bcbcbd;
-  text-align: center;
-}
-
-.close-legal-section-copy {
-  @extend .legal-copy;
-  line-height: 26px;
-}
-
-.portrait {
-  @media (orientation: portrait) {
-    display: block;
-  }
-
-  @media (orientation: landscape) {
-    display: none;
-  }
-}
-
-.landscape {
-  @media (orientation: portrait) {
-    display: none;
-  }
-
-  @media (orientation: landscape) {
-    display: block;
-  }
-}
 
 // *
+
 
 // IMAGE ASSETS
 // For absolute positioning the images
