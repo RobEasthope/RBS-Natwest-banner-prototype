@@ -112,9 +112,6 @@ function toggleLegalSection(){
 
 // ANIMATIONS
 function animationSequence(){
-  // Init timeline
-  var tl = new TimelineMax({repeat:2});
-
   // SETTINGS
   // Animation settings
   var movementDistance = 15;
@@ -124,6 +121,11 @@ function animationSequence(){
   var bkgAnimationTiming = 1;
   var frameAnimationTiming = 0.4;
   var holdTime = "+=2";
+  var finalHoldTime = 2;
+
+  // Init timeline
+  var tl = new TimelineMax({repeat:1, repeatDelay: finalHoldTime});
+
 
   // *
 
