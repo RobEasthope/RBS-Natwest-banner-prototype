@@ -155,7 +155,7 @@ function animationSequence(){
   // F5 - Copy/CTA button/Arrow
   .to('#F5', frameAnimationTiming, {css: { top: 0, opacity: 1 }})
   .to('#cta', frameAnimationTiming, {css: { top: 0, opacity: 1 }})
-  .to('#arrow', frameAnimationTiming, {css: { top: 0, opacity: 1 }});
+  .to('#arrow', frameAnimationTiming, {css: { top: 0, left: 0, opacity: 1 }}, holdTime);
 }
 
 // Wire up event listeners and onClick events

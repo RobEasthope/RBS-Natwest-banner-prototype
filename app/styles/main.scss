@@ -166,6 +166,8 @@ $frame-elements-movement: -15px;
 #arrow {
   @extend %zero-opacity;
   z-index: 202;
+  top: 30px;
+  left: $bkg-movement;
 }
 
 #legals {
