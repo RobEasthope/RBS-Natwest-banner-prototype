@@ -113,15 +113,21 @@ function animationSequence(){
   // Animation settings
   var movementDistance = 10;
 
+  var entranceDistance = 0 - movementDistance;
+  var exitDistance = movementDistance;
+
+  var arrowMovementX = 0 - (movementDistance * 2);
+  var arrowMovementY = movementDistance * 2;
+
   // Animation timings
   var initialFadeIn = 0.4;
   var bkgAnimationTiming = 1;
   var frameAnimationTiming = 0.6;
-  var holdTime = "+=2";
-  var finalHoldTime = 3;
+  var holdTime = '+=2';
+  var finalHoldTime = '+=3';
 
   // Init timeline
-  var tl = new TimelineMax({repeat:1, repeatDelay: finalHoldTime});
+  var tl = new TimelineMax();
 
   // *
 
@@ -129,31 +135,71 @@ function animationSequence(){
   tl.to('#preloader', 0, {css: { opacity: 0 }})
   .to('#preloader-bkg', initialFadeIn, {css: { opacity: 0 }})
 
+  // LOOP ONE
   // Slide in background
   .to('#bkg', bkgAnimationTiming, {css: { left: 0 }})
 
   // Frame #1
-  .to('#F1', frameAnimationTiming, {css: { top: 0, left: 0, opacity: 1 }})
-  .to('#F1', frameAnimationTiming, {css: { top: movementDistance, opacity: 0 }}, holdTime)
+  .from('#F1', frameAnimationTiming, {css: { top: entranceDistance, left: 0, opacity: 0 }})
+  .to('#F1', frameAnimationTiming, {css: { top: exitDistance, opacity: 0 }}, holdTime)
 
   // Frame #2
-  .to('#F2', frameAnimationTiming, {css: { top: 0, left: 0, opacity: 1 }})
-  .to('#F2', frameAnimationTiming, {css: { top: movementDistance, opacity: 0 }}, holdTime)
+  .from('#F2', frameAnimationTiming, {css: { top: entranceDistance, left: 0, opacity: 0 }})
+  .to('#F2', frameAnimationTiming, {css: { top: exitDistance, opacity: 0 }}, holdTime)
 
   // Frame #3
-  .to('#F3', frameAnimationTiming, {css: { top: 0, left: 0, opacity: 1 }})
-  .to('#F3', frameAnimationTiming, {css: { top: movementDistance, opacity: 0 }}, holdTime)
+  .from('#F3', frameAnimationTiming, {css: { top: entranceDistance, left: 0, opacity: 0 }})
+  .to('#F3', frameAnimationTiming, {css: { top: exitDistance, opacity: 0 }}, holdTime)
 
   // Frame #4
-  .to('#F4', frameAnimationTiming, {css: { top: 0, left: 0, opacity: 1 }})
-  .to('#F4', frameAnimationTiming, {css: { top: movementDistance, opacity: 0 }}, holdTime)
+  .from('#F4', frameAnimationTiming, {css: { top: entranceDistance, left: 0, opacity: 0 }})
+  .to('#F4', frameAnimationTiming, {css: { top: exitDistance, opacity: 0 }}, holdTime)
 
   // Frame #5
-  .to('#F5', frameAnimationTiming, {css: { top: 0, left: 0, opacity: 1 }}, 'f5')
-  .to('#legals', frameAnimationTiming, {css: { top: 0, left: 0, opacity: 1 }}, 'f5')
-  .to('#disclaimer', frameAnimationTiming, {css: { top: 0, left: 0, opacity: 1 }}, 'f5')
+  .from('#F5', frameAnimationTiming, {css: { top: entranceDistance, left: 0, opacity: 0 }}, 'f5')
+  .from('#legals', frameAnimationTiming, {css: { top: 0, left: entranceDistance, opacity: 0 }}, 'f5')
+  .from('#disclaimer', frameAnimationTiming, {css: { top: 0, left: entranceDistance, opacity: 0 }}, 'f5')
   .from('#button', frameAnimationTiming, {css: { scaleX: 0, scaleY: 0, opacity: 0 }}, 'f5')
-  .to('#arrow', frameAnimationTiming, {css: { top: 0, left: 0, opacity: 1 }}, 'f5');
+  .from('#arrow', frameAnimationTiming, {css: { top: arrowMovementY, left: arrowMovementX, opacity: 0 }}, 'f5')
+
+  // Dummy code to hold at final frame
+  .to('#content', 0, {css: { left: 0 }}, finalHoldTime)
+
+  // Fade out final frame
+  .to('#F5', frameAnimationTiming, {css: { top: movementDistance, left: 0, opacity: 0 }},'f5-exit')
+  .to('#legals', frameAnimationTiming, {css: { top: 0, left: 0, opacity: 0 }},'f5-exit')
+  .to('#disclaimer', frameAnimationTiming, {css: { top: 0, left: 0, opacity: 0 }}, 'f5-exit')
+  .to('#button', frameAnimationTiming, {css: { scaleX: 0, scaleY: 0, opacity: 0 }}, 'f5-exit')
+  .to('#arrow', frameAnimationTiming, {css: { top: -10, left: 10, opacity: 0 }}, 'f5-exit')
+
+  // *
+
+  // LOOP TWO
+  // Slide in background
+  .to('#bkg', bkgAnimationTiming, {css: { left: 0 }})
+
+  // Frame #1
+  .fromTo('#F1', frameAnimationTiming, {css: { top: entranceDistance, left: 0, opacity: 0 }}, {css: { top: 0, left: 0, opacity: 1 }})
+  .to('#F1', frameAnimationTiming, {css: { top: exitDistance, opacity: 0 }}, holdTime)
+
+  // Frame #2
+  .fromTo('#F2', frameAnimationTiming, {css: { top: entranceDistance, left: 0, opacity: 0 }}, {css: { top: 0, left: 0, opacity: 1 }})
+  .to('#F2', frameAnimationTiming, {css: { top: exitDistance, opacity: 0 }}, holdTime)
+
+  // Frame #3
+  .fromTo('#F3', frameAnimationTiming, {css: { top: entranceDistance, left: 0, opacity: 0 }}, {css: { top: 0, left: 0, opacity: 1 }})
+  .to('#F3', frameAnimationTiming, {css: { top: exitDistance, opacity: 0 }}, holdTime)
+
+  // Frame #4
+  .fromTo('#F4', frameAnimationTiming, {css: { top: entranceDistance, left: 0, opacity: 0 }}, {css: { top: 0, left: 0, opacity: 1 }})
+  .to('#F4', frameAnimationTiming, {css: { top: exitDistance, opacity: 0 }}, holdTime)
+
+  // Frame #5
+  .fromTo('#F5', frameAnimationTiming, {css: { top: 0, left: 0, opacity: 0 }}, {css: { top: 0, left: 0, opacity: 1 }}, 'f5-final')
+  .fromTo('#legals', frameAnimationTiming, {css: { top: 0, left: entranceDistance, opacity: 0 }}, {css: { top: 0, left: 0, opacity: 1 }}, 'f5-final')
+  .fromTo('#disclaimer', frameAnimationTiming, {css: { top: 0, left: entranceDistance, opacity: 0 }}, {css: { top: 0, left: 0, opacity: 1 }}, 'f5-final')
+  .fromTo('#button', frameAnimationTiming, {css: { scaleX: 0, scaleY: 0, opacity: 0 }}, {css: { scaleX: 1, scaleY: 1, opacity: 1 }}, 'f5-final')
+  .fromTo('#arrow', frameAnimationTiming, {css: { top: arrowMovementY, left: arrowMovementX, opacity: 0 }}, {css: { top: 0, left: 0, opacity: 1 }}, 'f5-final');
 }
 
 // Wire up event listeners and onClick events

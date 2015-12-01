@@ -10,58 +10,58 @@
 }
 
 #F1 {
-  @extend %zero-opacity;
+  // @extend %zero-opacity;
   z-index: $content-z-index;
-  top: (-$frame-elements-movement);
+  // top: (-$frame-elements-movement);
 }
 
 #F2 {
-  @extend %zero-opacity;
+  // @extend %zero-opacity;
   z-index: $content-z-index;
-  top: (-$frame-elements-movement);
+  // top: (-$frame-elements-movement);
 }
 
 #F3 {
-  @extend %zero-opacity;
+  // @extend %zero-opacity;
   z-index: $content-z-index;
-  top: (-$frame-elements-movement);
+  // top: (-$frame-elements-movement);
 }
 
 
 #F4 {
-  @extend %zero-opacity;
+  // @extend %zero-opacity;
   z-index: $content-z-index;
-  top: (-$frame-elements-movement);
+  // top: (-$frame-elements-movement);
 }
 
 #F5 {
-  @extend %zero-opacity;
+  // @extend %zero-opacity;
   z-index: $content-z-index;
-  top: (-$frame-elements-movement);
+  // top: (-$frame-elements-movement);
 }
 
 #button {
   z-index: $content-z-index;
-  
+
   // Set transform origin to the centre of the button to ensure correct scale effect
   transform-origin: $button-transform-x $button-transform-y;
 }
 
 #arrow {
-  @extend %zero-opacity;
+  // @extend %zero-opacity;
   z-index: $content-z-index;
-  top: 20px;
-  left: -20px;
+  top: 0;
+  left: 0;
 }
 
 #legals {
-  @extend %zero-opacity;
+  // @extend %zero-opacity;
   z-index: $content-z-index;
-  left: (-$frame-elements-movement);
+  // left: (-$frame-elements-movement);
 }
 
 #disclaimer {
-  @extend %zero-opacity;
+  // @extend %zero-opacity;
   z-index: $content-z-index;
-  left: (-$frame-elements-movement);
+  // left: (-$frame-elements-movement);
 }
