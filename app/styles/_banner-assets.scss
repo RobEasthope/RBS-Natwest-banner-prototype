@@ -42,7 +42,9 @@
 
 #button {
   z-index: $content-z-index;
-  transform-origin: 46.25% 34.83%;
+  
+  // Set transform origin to the centre of the button to ensure correct scale effect
+  transform-origin: $button-transform-x $button-transform-y;
 }
 
 #arrow {

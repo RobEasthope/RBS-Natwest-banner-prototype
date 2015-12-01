@@ -1,4 +1,4 @@
-// Settings & mixins
+// SETTINGS
 // Set portrait orientation size only - landscape sizes dealt with automatically
 $banner-width: 160px;
 $banner-height: 600px;
@@ -13,8 +13,13 @@ $campaign-link-z-index: 500;
 $bkg-movement: 55px;
 $frame-elements-movement: 10px;
 
+// Button transform co-ordinates (Get X/Y position from source PSD)
+$button-transform-x: 74px;
+$button-transform-y: 209px;
+
 // *
 
+// MIXINS & SHADOW CLASSES
 // Banner sizing
 %sizing {
   position: absolute;
