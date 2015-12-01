@@ -21,6 +21,7 @@ gulp.task('styles', () => {
     .pipe($.sourcemaps.write())
     .pipe(gulp.dest('.tmp'))
     .pipe(gulp.dest('.tmp/styles'))
+    .pipe(gulp.dest('app'))
     .pipe(reload({stream: true}));
 });
 
