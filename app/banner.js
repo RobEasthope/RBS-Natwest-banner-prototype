@@ -18,55 +18,67 @@ loadJSDependencies();
 // Load dynamic content
 function initDynamicContent() {
   // Enabler profile ID
-  Enabler.setProfileId(1062200);
+  Enabler.setProfileId(1064716);
 
   // Stash dynamic content array with settings
-  var devDynamicContent = {};
-  devDynamicContent.Feed_160x600 = [{}];
+  devDynamicContent.Feed_160x600= [{}];
   devDynamicContent.Feed_160x600[0]._id = 0;
   devDynamicContent.Feed_160x600[0].id = 1;
-  devDynamicContent.Feed_160x600[0].reporting_label = '???';
+  devDynamicContent.Feed_160x600[0].reportingLabel = "45102321_RBS_VIP-Lounges";
   devDynamicContent.Feed_160x600[0].startDate = {};
-  devDynamicContent.Feed_160x600[0].startDate.RawValue = '';
+  devDynamicContent.Feed_160x600[0].startDate.RawValue = "";
   devDynamicContent.Feed_160x600[0].startDate.UtcValue = 0;
   devDynamicContent.Feed_160x600[0].endDate = {};
-  devDynamicContent.Feed_160x600[0].endDate.RawValue = '';
+  devDynamicContent.Feed_160x600[0].endDate.RawValue = "";
   devDynamicContent.Feed_160x600[0].endDate.UtcValue = 0;
+  devDynamicContent.Feed_160x600[0].Content_path = {"arrow.png":{"Type":"file","Url":"https://s0.2mdn.net/ads/richmedia/studio/40240601/23127894_20151201084933700_arrow.png"},"bkg.jpg":{"Type":"file","Url":"https://s0.2mdn.net/ads/richmedia/studio/40239636/23127894_20151201084940945_bkg.jpg"},"logo.png":{"Type":"file","Url":"https://s0.2mdn.net/ads/richmedia/studio/40239635/23127894_20151201084927609_logo.png"},"legals.png":{"Type":"file","Url":"https://s0.2mdn.net/ads/richmedia/studio/40239033/23127894_20151201084920037_legals.png"},"f5.png":{"Type":"file","Url":"https://s0.2mdn.net/ads/richmedia/studio/40239032/23127894_20151201084912828_f5.png"},"f4.png":{"Type":"file","Url":"https://s0.2mdn.net/ads/richmedia/studio/40238142/23127894_20151201084906857_f4.png"},"f3.png":{"Type":"file","Url":"https://s0.2mdn.net/ads/richmedia/studio/40240600/23127894_20151201084859482_f3.png"},"f2.png":{"Type":"file","Url":"https://s0.2mdn.net/ads/richmedia/studio/40238136/23127894_20151201084852435_f2.png"},"f1.png":{"Type":"file","Url":"https://s0.2mdn.net/ads/richmedia/studio/40238658/23127894_20151201084845685_f1.png"},"disclaimer.png":{"Type":"file","Url":"https://s0.2mdn.net/ads/richmedia/studio/40239633/23127894_20151201084837554_disclaimer.png"},"button.png":{"Type":"file","Url":"https://s0.2mdn.net/ads/richmedia/studio/40238382/23127894_20151201084830815_button.png"}};
+  devDynamicContent.Feed_160x600[0].background_image = "bkg.jpg";
+  devDynamicContent.Feed_160x600[0].logo_image = "logo.png";
+  devDynamicContent.Feed_160x600[0].cta = "button.png";
+  devDynamicContent.Feed_160x600[0].frame1 = "f1.png";
+  devDynamicContent.Feed_160x600[0].frame2 = "f2.png";
+  devDynamicContent.Feed_160x600[0].frame3 = "f3.png";
+  devDynamicContent.Feed_160x600[0].frame4 = "f4.png";
+  devDynamicContent.Feed_160x600[0].frame5 = "f5.png";
+  devDynamicContent.Feed_160x600[0].frame5_disclaimer = "disclaimer.png";
+  devDynamicContent.Feed_160x600[0].frame5_legals = "legals.png";
+  devDynamicContent.Feed_160x600[0].arrow = "arrow.png";
+  devDynamicContent.Feed_160x600[0].DEFAULT = true;
+  Enabler.setDevDynamicContent(devDynamicContent);
 
   // *
 
   // Declare file assets
-  devDynamicContent.Feed_160x600[0].content = {
-    // Test content
-    "bkg": { "Type": "file", "Url": "bkg.jpg"},
-    "logo": { "Type": "file", "Url": "logo.png"},
-    "f1": { "Type": "file", "Url": "f1.png"},
-    "f2": { "Type": "file", "Url": "f2.png"},
-    "f3": { "Type": "file", "Url": "f3.png"},
-    "f4": { "Type": "file", "Url": "f4.png"},
-    "f5": { "Type": "file", "Url": "f5.png"},
-    "button": { "Type": "file", "Url": "button.png"},
-    "arrow": { "Type": "file", "Url": "arrow.png"},
-    "legals": { "Type": "file", "Url": "legals.png"},
-    "disclaimer": { "Type": "file", "Url": "disclaimer.png"}
-  };
+  // devDynamicContent.Feed_160x600[0].content = {
+  //   // Test content
+  //   "bkg": { "Type": "file", "Url": "bkg.jpg"},
+  //   "logo": { "Type": "file", "Url": "logo.png"},
+  //   "f1": { "Type": "file", "Url": "f1.png"},
+  //   "f2": { "Type": "file", "Url": "f2.png"},
+  //   "f3": { "Type": "file", "Url": "f3.png"},
+  //   "f4": { "Type": "file", "Url": "f4.png"},
+  //   "f5": { "Type": "file", "Url": "f5.png"},
+  //   "button": { "Type": "file", "Url": "button.png"},
+  //   "arrow": { "Type": "file", "Url": "arrow.png"},
+  //   "legals": { "Type": "file", "Url": "legals.png"},
+  //   "disclaimer": { "Type": "file", "Url": "disclaimer.png"}
+  // };
 
-  // ???
-  devDynamicContent.Feed_160x600[0].DEFAULT = true;
-  Enabler.setDevDynamicContent(devDynamicContent);
 
   // Add dynamic assets to DOM
-  document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_160x600[0].content['bkg']['Url'] + " id='bkg' class='absolute'></img>";
-  document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_160x600[0].content['logo']['Url'] + " id='logo' class='absolute'></img>";
-  document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_160x600[0].content['f1']['Url'] + " id='F1' class='absolute'></img>";
-  document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_160x600[0].content['f2']['Url'] + " id='F2' class='absolute'></img>";
-  document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_160x600[0].content['f3']['Url'] + " id='F3' class='absolute'></img>";
-  document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_160x600[0].content['f4']['Url'] + " id='F4' class='absolute'></img>";
-  document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_160x600[0].content['f5']['Url'] + " id='F5' class='absolute'></img>";
-  document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_160x600[0].content['button']['Url'] + " id='button' class='absolute'></img>";
-  document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_160x600[0].content['arrow']['Url'] + " id='arrow' class='absolute'></img>";
-  document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_160x600[0].content['legals']['Url'] + " id='legals' class='absolute'></img>";
-  document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_160x600[0].content['disclaimer']['Url'] + " id='disclaimer' class='absolute'></img>";
+  console.log('>>>>>>>>>> '+devDynamicContent.Feed_160x600[0].Content_path[devDynamicContent.Feed_160x600[0].background_image]['Url'])
+
+  document.getElementById("content").innerHTML += "<img src='" + dynamicContent.Feed_160x600[0].Content_path[dynamicContent.Feed_160x600[0].background_image]['Url'] + "' id='bkg' class='absolute'></img>";
+  document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_160x600[0].Content_path[dynamicContent.Feed_160x600[0].logo_image]['Url'] + " id='logo' class='absolute'></img>";
+  document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_160x600[0].Content_path[dynamicContent.Feed_160x600[0].frame1]['Url'] + " id='F1' class='absolute'></img>";
+  document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_160x600[0].Content_path[dynamicContent.Feed_160x600[0].frame2]['Url'] + " id='F2' class='absolute'></img>";
+  document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_160x600[0].Content_path[dynamicContent.Feed_160x600[0].frame3]['Url'] + " id='F3' class='absolute'></img>";
+  document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_160x600[0].Content_path[dynamicContent.Feed_160x600[0].frame4]['Url'] + " id='F4' class='absolute'></img>";
+  document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_160x600[0].Content_path[dynamicContent.Feed_160x600[0].frame5]['Url'] + " id='F5' class='absolute'></img>";
+  document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_160x600[0].Content_path[dynamicContent.Feed_160x600[0].cta]['Url'] + " id='button' class='absolute'></img>";
+  document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_160x600[0].Content_path[dynamicContent.Feed_160x600[0].arrow]['Url'] + " id='arrow' class='absolute'></img>";
+  document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_160x600[0].Content_path[dynamicContent.Feed_160x600[0].frame5_legals]['Url'] + " id='legals' class='absolute'></img>";
+  document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_160x600[0].Content_path[dynamicContent.Feed_160x600[0].frame5_disclaimer]['Url'] + " id='disclaimer' class='absolute'></img>";
 
   // Begin animation sequence
   animationSequence();
