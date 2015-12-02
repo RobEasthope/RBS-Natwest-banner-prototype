@@ -4,15 +4,10 @@
 //For JS dependencies for polite load
 function loadJSDependencies() {
   head.load(
-    "https://code.createjs.com/easeljs-0.8.1.min.js",
-    "https://code.createjs.com/tweenjs-0.6.1.min.js",
-    "https://code.createjs.com/movieclip-0.8.1.min.js",
-    "https://code.createjs.com/preloadjs-0.4.1.min.js",
-    "https://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/plugins/CSSPlugin.min.js",
-    "https://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/easing/EasePack.min.js",
-    "https://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TweenLite.min.js",
-    "https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TimelineMax.min.js",
-    "https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/plugins/BezierPlugin.min.js",
+    "https://s0.2mdn.net/ads/richmedia/studio/40257085/preloadjs-0.4.1.min.js",
+    "https://s0.2mdn.net/ads/richmedia/studio/40257085/CSSPlugin.min.js",
+    "https://s0.2mdn.net/ads/richmedia/studio/40257085/TweenLite.min.js",
+    "https://s0.2mdn.net/ads/richmedia/studio/40257085/TimelineMax.min.js",
     initDynamicContent
   );
 }
