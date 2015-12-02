@@ -1,6 +1,15 @@
 'use strict';
 
 // SETUP
+// Declare variables for DoubleClick
+var devDynamicContent = {};
+
+// Declare variables for preloader
+var manifest =[];
+var loader;
+var loadedImages = {};
+
+
 //For JS dependencies for polite load
 function loadJSDependencies() {
   head.load(
@@ -46,42 +55,64 @@ function initDynamicContent() {
   devDynamicContent.Feed_160x600[0].DEFAULT = true;
   Enabler.setDevDynamicContent(devDynamicContent);
 
-  // *
+  // Loop through assets to generate preload manifest list
+  for (var key in dynamicContent.Feed_160x600[0].Content_path){
+      console.log(key);
+      var assetsObj = {};
+      assetsObj.src = dynamicContent.Feed_160x600[0].Content_path[key]['Url'];
+      assetsObj.id = key;
+      manifest.push(assetsObj);
+  }
 
-  // Declare file assets
-  // devDynamicContent.Feed_160x600[0].content = {
-  //   // Test content
-  //   "bkg": { "Type": "file", "Url": "bkg.jpg"},
-  //   "logo": { "Type": "file", "Url": "logo.png"},
-  //   "f1": { "Type": "file", "Url": "f1.png"},
-  //   "f2": { "Type": "file", "Url": "f2.png"},
-  //   "f3": { "Type": "file", "Url": "f3.png"},
-  //   "f4": { "Type": "file", "Url": "f4.png"},
-  //   "f5": { "Type": "file", "Url": "f5.png"},
-  //   "button": { "Type": "file", "Url": "button.png"},
-  //   "arrow": { "Type": "file", "Url": "arrow.png"},
-  //   "legals": { "Type": "file", "Url": "legals.png"},
-  //   "disclaimer": { "Type": "file", "Url": "disclaimer.png"}
-  // };
+  // Preloader functions
+  loader = new createjs.LoadQueue(true,null,true);
+  loader.addEventListener("fileload", handleFileLoad);
+  loader.addEventListener("complete", handleComplete);
+  loader.loadManifest(manifest);
+}
 
 
-  // Add dynamic assets to DOM
-  console.log('>>>>>>>>>> '+devDynamicContent.Feed_160x600[0].Content_path[devDynamicContent.Feed_160x600[0].background_image]['Url'])
+function handleFileLoad(evt) {
+  if (evt.item.type == "image") { loadedImages[evt.item.id] = evt.result; }
+}
 
-  document.getElementById("content").innerHTML += "<img src='" + dynamicContent.Feed_160x600[0].Content_path[dynamicContent.Feed_160x600[0].background_image]['Url'] + "' id='bkg' class='absolute'></img>";
-  document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_160x600[0].Content_path[dynamicContent.Feed_160x600[0].logo_image]['Url'] + " id='logo' class='absolute'></img>";
-  document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_160x600[0].Content_path[dynamicContent.Feed_160x600[0].frame1]['Url'] + " id='F1' class='absolute'></img>";
-  document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_160x600[0].Content_path[dynamicContent.Feed_160x600[0].frame2]['Url'] + " id='F2' class='absolute'></img>";
-  document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_160x600[0].Content_path[dynamicContent.Feed_160x600[0].frame3]['Url'] + " id='F3' class='absolute'></img>";
-  document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_160x600[0].Content_path[dynamicContent.Feed_160x600[0].frame4]['Url'] + " id='F4' class='absolute'></img>";
-  document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_160x600[0].Content_path[dynamicContent.Feed_160x600[0].frame5]['Url'] + " id='F5' class='absolute'></img>";
-  document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_160x600[0].Content_path[dynamicContent.Feed_160x600[0].cta]['Url'] + " id='button' class='absolute'></img>";
-  document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_160x600[0].Content_path[dynamicContent.Feed_160x600[0].arrow]['Url'] + " id='arrow' class='absolute'></img>";
-  document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_160x600[0].Content_path[dynamicContent.Feed_160x600[0].frame5_legals]['Url'] + " id='legals' class='absolute'></img>";
-  document.getElementById("content").innerHTML += "<img src=" + dynamicContent.Feed_160x600[0].Content_path[dynamicContent.Feed_160x600[0].frame5_disclaimer]['Url'] + " id='disclaimer' class='absolute'></img>";
 
-  // Begin animation sequence
-  animationSequence();
+
+// List assets and ID's for DOM insertion
+function prepAssets(){
+  // Bkg
+  document.getElementById("content").innerHTML += "<div id='bkg' class='absolute'></div>";
+  document.getElementById('bkg').appendChild(loadedImages[dynamicContent.Feed_160x600[0].background_image]);
+
+  document.getElementById("content").innerHTML += "<div id='logo' class='absolute'></div>";
+  document.getElementById('logo').appendChild(loadedImages[dynamicContent.Feed_160x600[0].logo_image]);
+
+  document.getElementById("content").innerHTML += "<div id='F1' class='absolute'></div>";
+  document.getElementById('F1').appendChild(loadedImages[dynamicContent.Feed_160x600[0].frame1]);
+
+  document.getElementById("content").innerHTML += "<div id='F2' class='absolute'></div>";
+  document.getElementById('F2').appendChild(loadedImages[dynamicContent.Feed_160x600[0].frame2]);
+
+  document.getElementById("content").innerHTML += "<div id='F3' class='absolute'></div>";
+  document.getElementById('F3').appendChild(loadedImages[dynamicContent.Feed_160x600[0].frame3]);
+
+  document.getElementById("content").innerHTML += "<div id='F4' class='absolute'></div>";
+  document.getElementById('F4').appendChild(loadedImages[dynamicContent.Feed_160x600[0].frame4]);
+
+  document.getElementById("content").innerHTML += "<div id='F5' class='absolute'></div>";
+  document.getElementById('F5').appendChild(loadedImages[dynamicContent.Feed_160x600[0].frame5]);
+
+  document.getElementById("content").innerHTML += "<div id='button' class='absolute'></div>";
+  document.getElementById('button').appendChild(loadedImages[dynamicContent.Feed_160x600[0].cta]);
+
+  document.getElementById("content").innerHTML += "<div id='arrow' class='absolute'></div>";
+  document.getElementById('arrow').appendChild(loadedImages[dynamicContent.Feed_160x600[0].arrow]);
+
+  document.getElementById("content").innerHTML += "<div id='legals' class='absolute'></div>";
+  document.getElementById('legals').appendChild(loadedImages[dynamicContent.Feed_160x600[0].frame5_legals]);
+
+  document.getElementById("content").innerHTML += "<div id='disclaimer' class='absolute'></div>";
+  document.getElementById('disclaimer').appendChild(loadedImages[dynamicContent.Feed_160x600[0].frame5_disclaimer]);
 }
 
 // *
@@ -209,8 +240,19 @@ function animationSequence(){
   .fromTo('#arrow', frameAnimationTiming, {css: { top: arrowMovementY, left: arrowMovementX, opacity: 0 }}, {css: { top: 0, left: 0, opacity: 1 }}, 'f5-final');
 }
 
+// *
+
 // Wire up event listeners and onClick events
 // Wire up openCampaignLink() to DOM element
 document.getElementById('campaign-link').onclick = function(){
   openCampaignLink();
 };
+
+// We are go! a.k.a Init banner...
+function handleComplete() {
+  // Load assets
+  prepAssets();
+
+  // Start animation sequence
+  animationSequence();
+}
