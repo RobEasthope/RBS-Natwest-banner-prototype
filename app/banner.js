@@ -124,24 +124,6 @@ function openCampaignLink(){
   Enabler.exit('clickthrough');
 }
 
-// LEGAL SECTION
-// Open and close legal section functionality
-function toggleLegalSection(){
-  // Get legal section ID
-  var legalSection = document.getElementById('legalSection');
-
-  // Open legal section
-  if (legalSection.classList.contains('legal-section-closed')) {
-    legalSection.classList.remove('legal-section-closed');
-    legalSection.classList.add('legal-section-open');
-    console.log('Open legal section');
-  } else {
-    legalSection.classList.remove('legal-section-open');
-    legalSection.classList.add('legal-section-closed');
-    console.log('Close legal section');
-  }
-}
-
 // *
 
 // ANIMATIONS
