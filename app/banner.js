@@ -17,6 +17,8 @@ function loadJSDependencies() {
     "https://s0.2mdn.net/ads/richmedia/studio/40257085/CSSPlugin.min.js",
     "https://s0.2mdn.net/ads/richmedia/studio/40257085/TweenLite.min.js",
     "https://s0.2mdn.net/ads/richmedia/studio/40257085/TimelineMax.min.js",
+
+    // Start loading of dynamic content immediately
     initDynamicContent
   );
 }
@@ -57,11 +59,10 @@ function initDynamicContent() {
 
   // Loop through assets to generate preload manifest list
   for (var key in dynamicContent.Feed_160x600[0].Content_path){
-      console.log(key);
-      var assetsObj = {};
-      assetsObj.src = dynamicContent.Feed_160x600[0].Content_path[key]['Url'];
-      assetsObj.id = key;
-      manifest.push(assetsObj);
+    var assetsObj = {};
+    assetsObj.src = dynamicContent.Feed_160x600[0].Content_path[key]['Url'];
+    assetsObj.id = key;
+    manifest.push(assetsObj);
   }
 
   // Preloader functions
@@ -71,12 +72,11 @@ function initDynamicContent() {
   loader.loadManifest(manifest);
 }
 
+// *
 
 function handleFileLoad(evt) {
   if (evt.item.type == "image") { loadedImages[evt.item.id] = evt.result; }
 }
-
-
 
 // List assets and ID's for DOM insertion
 function prepAssets(){
@@ -84,33 +84,43 @@ function prepAssets(){
   document.getElementById("content").innerHTML += "<div id='bkg' class='absolute'></div>";
   document.getElementById('bkg').appendChild(loadedImages[dynamicContent.Feed_160x600[0].background_image]);
 
+  // Logo
   document.getElementById("content").innerHTML += "<div id='logo' class='absolute'></div>";
   document.getElementById('logo').appendChild(loadedImages[dynamicContent.Feed_160x600[0].logo_image]);
 
+  // F1
   document.getElementById("content").innerHTML += "<div id='F1' class='absolute'></div>";
   document.getElementById('F1').appendChild(loadedImages[dynamicContent.Feed_160x600[0].frame1]);
 
+  // F2
   document.getElementById("content").innerHTML += "<div id='F2' class='absolute'></div>";
   document.getElementById('F2').appendChild(loadedImages[dynamicContent.Feed_160x600[0].frame2]);
 
+  // F3
   document.getElementById("content").innerHTML += "<div id='F3' class='absolute'></div>";
   document.getElementById('F3').appendChild(loadedImages[dynamicContent.Feed_160x600[0].frame3]);
 
+  // F4
   document.getElementById("content").innerHTML += "<div id='F4' class='absolute'></div>";
   document.getElementById('F4').appendChild(loadedImages[dynamicContent.Feed_160x600[0].frame4]);
 
+  // F5
   document.getElementById("content").innerHTML += "<div id='F5' class='absolute'></div>";
   document.getElementById('F5').appendChild(loadedImages[dynamicContent.Feed_160x600[0].frame5]);
 
+  // CTA button
   document.getElementById("content").innerHTML += "<div id='button' class='absolute'></div>";
   document.getElementById('button').appendChild(loadedImages[dynamicContent.Feed_160x600[0].cta]);
 
+  // Arrow
   document.getElementById("content").innerHTML += "<div id='arrow' class='absolute'></div>";
   document.getElementById('arrow').appendChild(loadedImages[dynamicContent.Feed_160x600[0].arrow]);
 
+  // Legal copy (Frame 5)
   document.getElementById("content").innerHTML += "<div id='legals' class='absolute'></div>";
   document.getElementById('legals').appendChild(loadedImages[dynamicContent.Feed_160x600[0].frame5_legals]);
 
+  // Disclaimer copy (Frame 5)
   document.getElementById("content").innerHTML += "<div id='disclaimer' class='absolute'></div>";
   document.getElementById('disclaimer').appendChild(loadedImages[dynamicContent.Feed_160x600[0].frame5_disclaimer]);
 }
@@ -128,14 +138,15 @@ function openCampaignLink(){
 
 // ANIMATIONS
 function animationSequence(){
-
   // SETTINGS
   // Animation settings
   var movementDistance = 10;
 
+  // Bit of math to cover element entrances and exits
   var entranceDistance = 0 - movementDistance;
   var exitDistance = movementDistance;
 
+  // Arrow/Chevron
   var arrowMovementX = 0 - (movementDistance * 2);
   var arrowMovementY = movementDistance * 2;
 
@@ -146,11 +157,12 @@ function animationSequence(){
   var holdTime = '+=1.8';
   var finalHoldTime = '+=2';
 
+  // *
+
   // Init timeline
   var tl = new TimelineMax();
 
-  // *
-
+  // TIMELINE
   // Hide preloader
   tl.to('#preloader', 0, {css: { opacity: 0 }})
   .to('#preloader-bkg', initialFadeIn, {css: { opacity: 0 }})
@@ -230,7 +242,7 @@ document.getElementById('campaign-link').onclick = function(){
   openCampaignLink();
 };
 
-// We are go! a.k.a Init banner...
+// WE ARE GO! a.k.a Init banner...
 function handleComplete() {
   // Load assets
   prepAssets();
