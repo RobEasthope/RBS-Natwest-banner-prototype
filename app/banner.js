@@ -81,38 +81,38 @@ function handleFileLoad(evt) {
 // List assets and ID's for DOM insertion
 function prepAssets(){
   // Bkg
-  document.getElementById("content").innerHTML += "<div id='bkg' class='absolute'></div>";
-  document.getElementById('bkg').appendChild(loadedImages[dynamicContent.Feed_160x600[0].background_image]);
+  document.getElementById("content").innerHTML += "<div id='bkg'></div>";
+  document.getElementById('bkg').appendChild(loadedImages[dynamicContent.Feed_300x600[0].background_image]);
   // Logo
-  document.getElementById("content").innerHTML += "<div id='logo' class='absolute'></div>";
-  document.getElementById('logo').appendChild(loadedImages[dynamicContent.Feed_160x600[0].logo_image]);
+  document.getElementById("content").innerHTML += "<div id='logo'></div>";
+  document.getElementById('logo').appendChild(loadedImages[dynamicContent.Feed_300x600[0].logo_image]);
   // F1
-  document.getElementById("content").innerHTML += "<div id='F1' class='absolute'></div>";
-  document.getElementById('F1').appendChild(loadedImages[dynamicContent.Feed_160x600[0].frame1]);
+  document.getElementById("content").innerHTML += "<div id='F1'></div>";
+  document.getElementById('F1').appendChild(loadedImages[dynamicContent.Feed_300x600[0].frame1]);
   // F2
-  document.getElementById("content").innerHTML += "<div id='F2' class='absolute'></div>";
-  document.getElementById('F2').appendChild(loadedImages[dynamicContent.Feed_160x600[0].frame2]);
+  document.getElementById("content").innerHTML += "<div id='F2'></div>";
+  document.getElementById('F2').appendChild(loadedImages[dynamicContent.Feed_300x600[0].frame2]);
   // F3
-  document.getElementById("content").innerHTML += "<div id='F3' class='absolute'></div>";
-  document.getElementById('F3').appendChild(loadedImages[dynamicContent.Feed_160x600[0].frame3]);
+  document.getElementById("content").innerHTML += "<div id='F3'></div>";
+  document.getElementById('F3').appendChild(loadedImages[dynamicContent.Feed_300x600[0].frame3]);
   // F4
-  document.getElementById("content").innerHTML += "<div id='F4' class='absolute'></div>";
-  document.getElementById('F4').appendChild(loadedImages[dynamicContent.Feed_160x600[0].frame4]);
+  document.getElementById("content").innerHTML += "<div id='F4'></div>";
+  document.getElementById('F4').appendChild(loadedImages[dynamicContent.Feed_300x600[0].frame4]);
   // F5
-  document.getElementById("content").innerHTML += "<div id='F5' class='absolute'></div>";
-  document.getElementById('F5').appendChild(loadedImages[dynamicContent.Feed_160x600[0].frame5]);
+  document.getElementById("content").innerHTML += "<div id='F5'></div>";
+  document.getElementById('F5').appendChild(loadedImages[dynamicContent.Feed_300x600[0].frame5]);
   // CTA button
-  document.getElementById("content").innerHTML += "<div id='button' class='absolute'></div>";
-  document.getElementById('button').appendChild(loadedImages[dynamicContent.Feed_160x600[0].cta]);
+  document.getElementById("content").innerHTML += "<div id='button'></div>";
+  document.getElementById('button').appendChild(loadedImages[dynamicContent.Feed_300x600[0].cta]);
   // Arrow
-  document.getElementById("content").innerHTML += "<div id='arrow' class='absolute'></div>";
-  document.getElementById('arrow').appendChild(loadedImages[dynamicContent.Feed_160x600[0].arrow]);
+  document.getElementById("content").innerHTML += "<div id='arrow'></div>";
+  document.getElementById('arrow').appendChild(loadedImages[dynamicContent.Feed_300x600[0].arrow]);
   // Legal copy (Frame 5)
-  document.getElementById("content").innerHTML += "<div id='legals' class='absolute'></div>";
-  document.getElementById('legals').appendChild(loadedImages[dynamicContent.Feed_160x600[0].frame5_legals]);
+  document.getElementById("content").innerHTML += "<div id='legals'></div>";
+  document.getElementById('legals').appendChild(loadedImages[dynamicContent.Feed_300x600[0].frame5_legals]);
   // Disclaimer copy (Frame 5)
-  document.getElementById("content").innerHTML += "<div id='disclaimer' class='absolute'></div>";
-  document.getElementById('disclaimer').appendChild(loadedImages[dynamicContent.Feed_160x600[0].frame5_disclaimer]);
+  document.getElementById("content").innerHTML += "<div id='disclaimer'></div>";
+  document.getElementById('disclaimer').appendChild(loadedImages[dynamicContent.Feed_300x600[0].frame5_disclaimer]);
 }
 
 // *
