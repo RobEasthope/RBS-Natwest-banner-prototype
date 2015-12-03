@@ -132,7 +132,7 @@ function openCampaignLink(){
 function animationSequence(){
   // SETTINGS
   // Animation settings
-  var movementDistance = 10;
+  var movementDistance = 5;
 
   // Bit of math to cover element entrances and exits
   var entranceDistance = 0 - movementDistance;
