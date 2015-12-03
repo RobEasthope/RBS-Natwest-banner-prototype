@@ -1,46 +1,44 @@
 // BANNER ASSETS
 // Individual image styles
 #bkg {
+  @extend %absolute;
   z-index: $bkg-z-index;
   left: (-$bkg-movement);
 }
 
 #logo {
+  @extend %absolute;
   z-index: $content-z-index;
 }
 
 #F1 {
-  // @extend %zero-opacity;
+  @extend %absolute;
   z-index: $content-z-index;
-  // top: (-$frame-elements-movement);
 }
 
 #F2 {
-  // @extend %zero-opacity;
+  @extend %absolute;
   z-index: $content-z-index;
-  // top: (-$frame-elements-movement);
 }
 
 #F3 {
-  // @extend %zero-opacity;
+  @extend %absolute;
   z-index: $content-z-index;
-  // top: (-$frame-elements-movement);
 }
 
 
 #F4 {
-  // @extend %zero-opacity;
+  @extend %absolute;
   z-index: $content-z-index;
-  // top: (-$frame-elements-movement);
 }
 
 #F5 {
-  // @extend %zero-opacity;
+  @extend %absolute;
   z-index: $content-z-index;
-  // top: (-$frame-elements-movement);
 }
 
 #button {
+  @extend %absolute;
   z-index: $content-z-index;
 
   // Set transform origin to the centre of the button to ensure correct scale effect
@@ -48,20 +46,18 @@
 }
 
 #arrow {
-  // @extend %zero-opacity;
+  @extend %absolute;
   z-index: $content-z-index;
   top: 0;
   left: 0;
 }
 
 #legals {
-  // @extend %zero-opacity;
+  @extend %absolute;
   z-index: $content-z-index;
-  // left: (-$frame-elements-movement);
 }
 
 #disclaimer {
-  // @extend %zero-opacity;
+  @extend %absolute;
   z-index: $content-z-index;
-  // left: (-$frame-elements-movement);
 }
