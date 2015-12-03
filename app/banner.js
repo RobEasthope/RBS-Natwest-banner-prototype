@@ -82,37 +82,37 @@ function handleFileLoad(evt) {
 function prepAssets(){
   // Bkg
   document.getElementById("content").innerHTML += "<div id='bkg'></div>";
-  document.getElementById('bkg').appendChild(loadedImages[dynamicContent.Feed_300x600[0].background_image]);
+  document.getElementById('bkg').appendChild(loadedImages[dynamicContent.Feed_160x600[0].background_image]);
   // Logo
   document.getElementById("content").innerHTML += "<div id='logo'></div>";
-  document.getElementById('logo').appendChild(loadedImages[dynamicContent.Feed_300x600[0].logo_image]);
+  document.getElementById('logo').appendChild(loadedImages[dynamicContent.Feed_160x600[0].logo_image]);
   // F1
   document.getElementById("content").innerHTML += "<div id='F1'></div>";
-  document.getElementById('F1').appendChild(loadedImages[dynamicContent.Feed_300x600[0].frame1]);
+  document.getElementById('F1').appendChild(loadedImages[dynamicContent.Feed_160x600[0].frame1]);
   // F2
   document.getElementById("content").innerHTML += "<div id='F2'></div>";
-  document.getElementById('F2').appendChild(loadedImages[dynamicContent.Feed_300x600[0].frame2]);
+  document.getElementById('F2').appendChild(loadedImages[dynamicContent.Feed_160x600[0].frame2]);
   // F3
   document.getElementById("content").innerHTML += "<div id='F3'></div>";
-  document.getElementById('F3').appendChild(loadedImages[dynamicContent.Feed_300x600[0].frame3]);
+  document.getElementById('F3').appendChild(loadedImages[dynamicContent.Feed_160x600[0].frame3]);
   // F4
   document.getElementById("content").innerHTML += "<div id='F4'></div>";
-  document.getElementById('F4').appendChild(loadedImages[dynamicContent.Feed_300x600[0].frame4]);
+  document.getElementById('F4').appendChild(loadedImages[dynamicContent.Feed_160x600[0].frame4]);
   // F5
   document.getElementById("content").innerHTML += "<div id='F5'></div>";
-  document.getElementById('F5').appendChild(loadedImages[dynamicContent.Feed_300x600[0].frame5]);
+  document.getElementById('F5').appendChild(loadedImages[dynamicContent.Feed_160x600[0].frame5]);
   // CTA button
   document.getElementById("content").innerHTML += "<div id='button'></div>";
-  document.getElementById('button').appendChild(loadedImages[dynamicContent.Feed_300x600[0].cta]);
+  document.getElementById('button').appendChild(loadedImages[dynamicContent.Feed_160x600[0].cta]);
   // Arrow
   document.getElementById("content").innerHTML += "<div id='arrow'></div>";
-  document.getElementById('arrow').appendChild(loadedImages[dynamicContent.Feed_300x600[0].arrow]);
+  document.getElementById('arrow').appendChild(loadedImages[dynamicContent.Feed_160x600[0].arrow]);
   // Legal copy (Frame 5)
   document.getElementById("content").innerHTML += "<div id='legals'></div>";
-  document.getElementById('legals').appendChild(loadedImages[dynamicContent.Feed_300x600[0].frame5_legals]);
+  document.getElementById('legals').appendChild(loadedImages[dynamicContent.Feed_160x600[0].frame5_legals]);
   // Disclaimer copy (Frame 5)
   document.getElementById("content").innerHTML += "<div id='disclaimer'></div>";
-  document.getElementById('disclaimer').appendChild(loadedImages[dynamicContent.Feed_300x600[0].frame5_disclaimer]);
+  document.getElementById('disclaimer').appendChild(loadedImages[dynamicContent.Feed_160x600[0].frame5_disclaimer]);
 }
 
 // *
