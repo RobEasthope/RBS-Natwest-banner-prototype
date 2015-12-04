@@ -29,7 +29,7 @@ loadJSDependencies();
 // Load dynamic content
 function initDynamicContent() {
   // Enabler profile ID
-  Enabler.setProfileId(1064716);
+  Enabler.setProfileId(1064719);
 
   // Stash dynamic content array with settings
   devDynamicContent.Feed_300x250= [{}];
