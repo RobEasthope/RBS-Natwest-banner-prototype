@@ -30,7 +30,6 @@ loadJSDependencies();
 // Load dynamic content
 function initDynamicContent() {
   Enabler.setProfileId(1064719);
-  var devDynamicContent = {};
 
   devDynamicContent.Feed_160x600= [{}];
   devDynamicContent.Feed_160x600[0]._id = 0;
