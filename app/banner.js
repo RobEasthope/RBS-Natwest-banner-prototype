@@ -13,7 +13,7 @@ var loadedImages = {};
 //For JS dependencies for polite load
 function loadJSDependencies() {
   head.load(
-    "https://s0.2mdn.net/ads/richmedia/studio/40257085/preloadjs-0.4.1.min.js",
+    "https://s0.2mdn.net/ads/richmedia/studio/40257085/preloadjs-0.6.1.min.js",
     "https://s0.2mdn.net/ads/richmedia/studio/40257085/CSSPlugin.min.js",
     "https://s0.2mdn.net/ads/richmedia/studio/40257085/TweenLite.min.js",
     "https://s0.2mdn.net/ads/richmedia/studio/40257085/TimelineMax.min.js",
