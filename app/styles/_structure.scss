@@ -24,6 +24,8 @@ body {
   @extend %sizing;
   overflow: hidden;
 
+  background-color: white;
+
   // If you can't click things this might be the reason why
   pointer-events: none;
 }
