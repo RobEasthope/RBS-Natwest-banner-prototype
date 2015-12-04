@@ -1,44 +1,44 @@
 // BANNER ASSETS
 // Individual image styles
 #bkg {
-  @extend %absolute;
+  @extend .absolute;
   z-index: $bkg-z-index;
   left: (-$bkg-movement);
 }
 
 #logo {
-  @extend %absolute;
+  @extend .absolute;
   z-index: $content-z-index;
 }
 
 #F1 {
-  @extend %absolute;
+  @extend .absolute;
   z-index: $content-z-index;
 }
 
 #F2 {
-  @extend %absolute;
+  @extend .absolute;
   z-index: $content-z-index;
 }
 
 #F3 {
-  @extend %absolute;
+  @extend .absolute;
   z-index: $content-z-index;
 }
 
 
 #F4 {
-  @extend %absolute;
+  @extend .absolute;
   z-index: $content-z-index;
 }
 
 #F5 {
-  @extend %absolute;
+  @extend .absolute;
   z-index: $content-z-index;
 }
 
 #button {
-  @extend %absolute;
+  @extend .absolute;
   z-index: $content-z-index;
 
   // Set transform origin to the centre of the button to ensure correct scale effect
@@ -46,18 +46,18 @@
 }
 
 #arrow {
-  @extend %absolute;
+  @extend .absolute;
   z-index: $content-z-index;
   top: 0;
   left: 0;
 }
 
 #legals {
-  @extend %absolute;
+  @extend .absolute;
   z-index: $content-z-index;
 }
 
 #disclaimer {
-  @extend %absolute;
+  @extend .absolute;
   z-index: $content-z-index;
 }
