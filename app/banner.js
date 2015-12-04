@@ -179,6 +179,9 @@ function animationSequence(){
   .from('#F4', frameAnimationTiming, {css: { top: entranceDistance, left: 0, opacity: 0 }})
   .to('#F4', frameAnimationTiming, {css: { top: exitDistance, opacity: 0 }}, holdTime)
 
+  // Fade out logo to account for legal placement
+  .to('#logo', frameAnimationTiming, {css: { opacity: 0 }}, holdTime)
+
   // Frame #5
   .from('#F5', frameAnimationTiming, {css: { top: entranceDistance, left: 0, opacity: 0 }}, 'f5')
   .from('#legals', frameAnimationTiming, {css: { top: 0, left: entranceDistance, opacity: 0 }}, 'f5')
@@ -201,6 +204,7 @@ function animationSequence(){
   // LOOP TWO
   // Slide in background
   .to('#bkg', bkgAnimationTiming, {css: { left: 0 }})
+  .fromTo('logo', frameAnimationTiming, {css: { top: entranceDistance, left: 0, opacity: 0 }}, {css: { top: 0, left: 0, opacity: 1 }})
 
   // Frame #1
   .fromTo('#F1', frameAnimationTiming, {css: { top: entranceDistance, left: 0, opacity: 0 }}, {css: { top: 0, left: 0, opacity: 1 }})
