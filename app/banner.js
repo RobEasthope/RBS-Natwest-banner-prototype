@@ -184,8 +184,8 @@ function animationSequence(){
   .to('body', 0, {css: { top: 0 }}, finalHoldTime)
 
   // Exit Frame4
-  .to('#F4', frameAnimationTiming, {css: { top: exitDistance, opacity: 0 }}, 'F4-L2-exit')
-  .to('#logo', frameAnimationTiming, {css: { opacity: 0 }}, 'F4-L2-exit')
+  .to('#F4', frameAnimationTiming, {css: { top: exitDistance, opacity: 0 }}, 'F4-L1-exit')
+  .to('#logo', frameAnimationTiming, {css: { opacity: 0 }}, 'F4-L1-exit')
 
   // Frame #5
   .from('#F5', frameAnimationTiming, {css: { top: entranceDistance, left: 0, opacity: 0 }}, 'f5')
