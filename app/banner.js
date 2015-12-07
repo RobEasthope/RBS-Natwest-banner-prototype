@@ -177,14 +177,17 @@ function animationSequence(){
   .from('#F3', frameAnimationTiming, {css: { top: entranceDistance, left: 0, opacity: 0 }})
   .to('#F3', frameAnimationTiming, {css: { top: exitDistance, opacity: 0 }}, holdTime)
 
-  .to('#logo', frameAnimationTiming, {css: { opacity: 1 }})
 
   // Frame #4
-  .from('#F4', frameAnimationTiming, {css: { top: entranceDistance, left: 0, opacity: 0 }})
-  .to('#F4', frameAnimationTiming, {css: { top: exitDistance, opacity: 0 }}, holdTime)
+  .from('#F4', frameAnimationTiming, {css: { top: entranceDistance, left: 0, opacity: 0 }}, 'F4-L1-entrance')
+  .to('#logo', frameAnimationTiming, {css: { opacity: 1 }}, 'F4-L1-entrance')
 
-  // Fade out logo to account for legal placement
-  .to('#logo', frameAnimationTiming, {css: { opacity: 0 }})
+  // Dummy code to hold at final frame
+  .to('body', 0, {css: { top: 0 }}, finalHoldTime)
+
+  // Exit Frame4
+  .to('#F4', frameAnimationTiming, {css: { top: exitDistance, opacity: 0 }}, 'F4-L2-exit')
+  .to('#logo', frameAnimationTiming, {css: { opacity: 0 }}, 'F4-L2-exit')
 
   // Frame #5
   .from('#F5', frameAnimationTiming, {css: { top: entranceDistance, left: 0, opacity: 0 }}, 'f5')
@@ -194,7 +197,7 @@ function animationSequence(){
   .from('#arrow', frameAnimationTiming, {css: { top: arrowMovementY, left: arrowMovementX, opacity: 0 }}, 'f5')
 
   // Dummy code to hold at final frame
-  .to('#content', 0, {css: { left: 0 }}, finalHoldTime)
+  .to('body', 0, {css: { top: 0 }}, finalHoldTime)
 
   // Fade out final frame
   .to('#F5', frameAnimationTiming, {css: { top: movementDistance, left: 0, opacity: 0 }},'f5-exit')
@@ -225,11 +228,15 @@ function animationSequence(){
   .to('#F3', frameAnimationTiming, {css: { top: exitDistance, opacity: 0 }}, holdTime)
 
   // Frame #4
-  .to('#logo', frameAnimationTiming, {css: { opacity: 1 }})
-  .fromTo('#F4', frameAnimationTiming, {css: { top: entranceDistance, left: 0, opacity: 0 }}, {css: { top: 0, left: 0, opacity: 1 }})
-  .to('#F4', frameAnimationTiming, {css: { top: exitDistance, opacity: 0 }}, holdTime)
+  .fromTo('#F4', frameAnimationTiming, {css: { top: entranceDistance, left: 0, opacity: 0 }}, {css: { top: 0, left: 0, opacity: 1 }}, 'F4-L2-entrance')
+  .to('#logo', frameAnimationTiming, {css: { opacity: 1 }}, 'F4-L2-entrance')
 
-  .to('#logo', frameAnimationTiming, {css: { opacity: 0 }})
+  // Dummy code to hold at final frame
+  .to('body', 0, {css: { top: 0 }}, finalHoldTime)
+
+  // Exit Frame4
+  .to('#F4', frameAnimationTiming, {css: { top: exitDistance, opacity: 0 }}, 'F4-L2-exit')
+  .to('#logo', frameAnimationTiming, {css: { opacity: 0 }}, 'F4-L2-exit')
 
   // Frame #5
   .fromTo('#F5', frameAnimationTiming, {css: { top: 0, left: 0, opacity: 0 }}, {css: { top: 0, left: 0, opacity: 1 }}, 'f5-final')
