@@ -31,19 +31,17 @@ function initDynamicContent() {
   // Enabler profile ID
   Enabler.setProfileId(1064716);
 
-  // Stash dynamic content array with settings
   devDynamicContent.Feed_300x250= [{}];
   devDynamicContent.Feed_300x250[0]._id = 0;
   devDynamicContent.Feed_300x250[0].id = 1;
-  devDynamicContent.Feed_300x250[0].placementID = 66201411;
-  devDynamicContent.Feed_300x250[0].reportingLabel = "45102321_RBS_VIP-Lounges";
+  devDynamicContent.Feed_300x250[0].reportingLabel = "45102321_NW_VIP-Lounges";
   devDynamicContent.Feed_300x250[0].startDate = {};
   devDynamicContent.Feed_300x250[0].startDate.RawValue = "";
   devDynamicContent.Feed_300x250[0].startDate.UtcValue = 0;
   devDynamicContent.Feed_300x250[0].endDate = {};
   devDynamicContent.Feed_300x250[0].endDate.RawValue = "";
   devDynamicContent.Feed_300x250[0].endDate.UtcValue = 0;
-  devDynamicContent.Feed_300x250[0].Content_path = {"disclaimer.png":{"Type":"file","Url":"https://s0.2mdn.net/ads/richmedia/studio/40239633/23127894_20151201084837554_disclaimer.png"},"logo.png":{"Type":"file","Url":"https://s0.2mdn.net/ads/richmedia/studio/40239635/23127894_20151201084927609_logo.png"},"legals.png":{"Type":"file","Url":"https://s0.2mdn.net/ads/richmedia/studio/40239033/23127894_20151201084920037_legals.png"},"f4.png":{"Type":"file","Url":"https://s0.2mdn.net/ads/richmedia/studio/40238142/23127894_20151201084906857_f4.png"},"f2.png":{"Type":"file","Url":"https://s0.2mdn.net/ads/richmedia/studio/40238136/23127894_20151201084852435_f2.png"},"f1.png":{"Type":"file","Url":"https://s0.2mdn.net/ads/richmedia/studio/40238658/23127894_20151201084845685_f1.png"},"button.png":{"Type":"file","Url":"https://s0.2mdn.net/ads/richmedia/studio/40238382/23127894_20151201084830815_button.png"},"bkg.jpg":{"Type":"file","Url":"https://s0.2mdn.net/ads/richmedia/studio/40239636/23127894_20151201084940945_bkg.jpg"},"arrow.png":{"Type":"file","Url":"https://s0.2mdn.net/ads/richmedia/studio/40240601/23127894_20151201084933700_arrow.png"},"f3.png":{"Type":"file","Url":"https://s0.2mdn.net/ads/richmedia/studio/40240600/23127894_20151201084859482_f3.png"},"f5.png":{"Type":"file","Url":"https://s0.2mdn.net/ads/richmedia/studio/40239032/23127894_20151201084912828_f5.png"}};
+  devDynamicContent.Feed_300x250[0].Content_path = {"logo.png":{"Type":"file","Url":"https://s0.2mdn.net/ads/richmedia/studio/40242685/23127894_20151201103143163_logo.png"},"legals.png":{"Type":"file","Url":"https://s0.2mdn.net/ads/richmedia/studio/40243606/23127894_20151201103135170_legals.png"},"f4.png":{"Type":"file","Url":"https://s0.2mdn.net/ads/richmedia/studio/40243605/23127894_20151201103123459_f4.png"},"f2.png":{"Type":"file","Url":"https://s0.2mdn.net/ads/richmedia/studio/40243139/23127894_20151201103110513_f2.png"},"f1.png":{"Type":"file","Url":"https://s0.2mdn.net/ads/richmedia/studio/40242945/23127894_20151201103102177_f1.png"},"disclaimer.png":{"Type":"file","Url":"https://s0.2mdn.net/ads/richmedia/studio/40243043/23127894_20151201103053827_disclaimer.png"},"button.png":{"Type":"file","Url":"https://s0.2mdn.net/ads/richmedia/studio/40243604/23127894_20151201103047275_button.png"},"bkg.jpg":{"Type":"file","Url":"https://s0.2mdn.net/ads/richmedia/studio/40242681/23127894_20151201103039563_bkg.jpg"},"arrow.png":{"Type":"file","Url":"https://s0.2mdn.net/ads/richmedia/studio/40242944/23127894_20151201103032245_arrow.png"},"f3.png":{"Type":"file","Url":"https://s0.2mdn.net/ads/richmedia/studio/40242946/23127894_20151201103117251_f3.png"},"f5.png":{"Type":"file","Url":"https://s0.2mdn.net/ads/richmedia/studio/40239032/23127894_20151201084912828_f5.png"}};
   devDynamicContent.Feed_300x250[0].background_image = "bkg.jpg";
   devDynamicContent.Feed_300x250[0].logo_image = "logo.png";
   devDynamicContent.Feed_300x250[0].cta = "button.png";
@@ -171,12 +169,9 @@ function animationSequence(){
   .from('#F2', frameAnimationTiming, {css: { top: entranceDistance, left: 0, opacity: 0 }})
   .to('#F2', frameAnimationTiming, {css: { top: exitDistance, opacity: 0 }}, holdTime)
 
-  .to('#logo', frameAnimationTiming, {css: { opacity: 0 }})
-
   // Frame #3
   .from('#F3', frameAnimationTiming, {css: { top: entranceDistance, left: 0, opacity: 0 }})
   .to('#F3', frameAnimationTiming, {css: { top: exitDistance, opacity: 0 }}, holdTime)
-
 
   // Frame #4
   .from('#F4', frameAnimationTiming, {css: { top: entranceDistance, left: 0, opacity: 0 }}, 'F4-L1-entrance')
@@ -186,7 +181,7 @@ function animationSequence(){
   .to('body', 0, {css: { top: 0 }}, finalHoldTime)
 
   // Exit Frame4
-  .to('#F4', frameAnimationTiming, {css: { top: exitDistance, opacity: 0 }}, 'F4-L2-exit')
+  .to('#F4', frameAnimationTiming, {css: { top: exitDistance, opacity: 0 }}, 'F4-L1-exit')
   .to('#logo', frameAnimationTiming, {css: { opacity: 0 }}, 'F4-L2-exit')
 
   // Frame #5
@@ -210,8 +205,7 @@ function animationSequence(){
 
   // LOOP TWO
   // Slide in background
-  .to('#bkg', bkgAnimationTiming, {css: { left: 0 }}, 'bkg-loop-2')
-  .to('#logo', frameAnimationTiming, {css: { opacity: 1 }}, 'bkg-loop-2')
+  .to('#bkg', bkgAnimationTiming, {css: { left: 0 }})
 
   // Frame #1
   .fromTo('#F1', frameAnimationTiming, {css: { top: entranceDistance, left: 0, opacity: 0 }}, {css: { top: 0, left: 0, opacity: 1 }})
@@ -220,8 +214,6 @@ function animationSequence(){
   // Frame #2
   .fromTo('#F2', frameAnimationTiming, {css: { top: entranceDistance, left: 0, opacity: 0 }}, {css: { top: 0, left: 0, opacity: 1 }})
   .to('#F2', frameAnimationTiming, {css: { top: exitDistance, opacity: 0 }}, holdTime)
-
-  .to('#logo', frameAnimationTiming, {css: { opacity: 0 }})
 
   // Frame #3
   .fromTo('#F3', frameAnimationTiming, {css: { top: entranceDistance, left: 0, opacity: 0 }}, {css: { top: 0, left: 0, opacity: 1 }})
@@ -257,7 +249,7 @@ document.getElementById('campaign-link').onclick = function(){
 // WE ARE GO! a.k.a Init banner...
 function handleComplete() {
   // Load assets
-  // prepAssets();
+  prepAssets();
 
   // Start animation sequence
   animationSequence();
