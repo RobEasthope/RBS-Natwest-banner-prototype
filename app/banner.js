@@ -171,9 +171,12 @@ function animationSequence(){
   .from('#F2', frameAnimationTiming, {css: { top: entranceDistance, left: 0, opacity: 0 }})
   .to('#F2', frameAnimationTiming, {css: { top: exitDistance, opacity: 0 }}, holdTime)
 
+  .to('#logo', frameAnimationTiming, {css: { opacity: 0 }})
+
   // Frame #3
   .from('#F3', frameAnimationTiming, {css: { top: entranceDistance, left: 0, opacity: 0 }})
   .to('#F3', frameAnimationTiming, {css: { top: exitDistance, opacity: 0 }}, holdTime)
+
 
   // Frame #4
   .from('#F4', frameAnimationTiming, {css: { top: entranceDistance, left: 0, opacity: 0 }}, 'F4-L1-entrance')
@@ -184,7 +187,7 @@ function animationSequence(){
 
   // Exit Frame4
   .to('#F4', frameAnimationTiming, {css: { top: exitDistance, opacity: 0 }}, 'F4-L1-exit')
-  .to('#logo', frameAnimationTiming, {css: { opacity: 0 }}, 'F4-L2-exit')
+  .to('#logo', frameAnimationTiming, {css: { opacity: 0 }}, 'F4-L1-exit')
 
   // Frame #5
   .from('#F5', frameAnimationTiming, {css: { top: entranceDistance, left: 0, opacity: 0 }}, 'f5')
@@ -207,7 +210,8 @@ function animationSequence(){
 
   // LOOP TWO
   // Slide in background
-  .to('#bkg', bkgAnimationTiming, {css: { left: 0 }})
+  .to('#bkg', bkgAnimationTiming, {css: { left: 0 }}, 'bkg-loop-2')
+  .to('#logo', frameAnimationTiming, {css: { opacity: 1 }}, 'bkg-loop-2')
 
   // Frame #1
   .fromTo('#F1', frameAnimationTiming, {css: { top: entranceDistance, left: 0, opacity: 0 }}, {css: { top: 0, left: 0, opacity: 1 }})
@@ -216,6 +220,8 @@ function animationSequence(){
   // Frame #2
   .fromTo('#F2', frameAnimationTiming, {css: { top: entranceDistance, left: 0, opacity: 0 }}, {css: { top: 0, left: 0, opacity: 1 }})
   .to('#F2', frameAnimationTiming, {css: { top: exitDistance, opacity: 0 }}, holdTime)
+
+  .to('#logo', frameAnimationTiming, {css: { opacity: 0 }})
 
   // Frame #3
   .fromTo('#F3', frameAnimationTiming, {css: { top: entranceDistance, left: 0, opacity: 0 }}, {css: { top: 0, left: 0, opacity: 1 }})
