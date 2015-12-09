@@ -254,7 +254,7 @@ document.getElementById('campaign-link').onclick = function(){
 // WE ARE GO! a.k.a Init banner...
 function handleComplete() {
   // Load assets
-  prepAssets();
+  // prepAssets();
 
   // Start animation sequence
   animationSequence();
