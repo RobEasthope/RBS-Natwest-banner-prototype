@@ -143,11 +143,11 @@ function animationSequence(){
   var arrowMovementY = movementDistance * 2;
 
   // Animation timings
-  var initialFadeIn = 0.4;
+  var initialFadeIn = 0.3;
   var bkgAnimationTiming = 1;
-  var frameAnimationTiming = 0.5;
-  var holdTime = '+=1.8';
-  var finalHoldTime = '+=2';
+  var frameAnimationTiming = 0.4;
+  var holdTime = '+=1.7';
+  var finalHoldTime = '+=1.7';
 
   // *
 
