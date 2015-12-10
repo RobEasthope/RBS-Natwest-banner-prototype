@@ -39,6 +39,9 @@ body {
   @extend %sizing;
   position: absolute;
 
+  // Add pointer cursor
+  cursor:pointer;
+
   z-index: $campaign-link-z-index;
 }
 
